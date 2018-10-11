@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Quiz from './components/Quiz'
+import NameForm from './components/NameForm'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 
@@ -72,6 +73,7 @@ class App extends Component {
                 badAns={this.state.badAns}
                 handleBadAns={this.handleBadAnswer}
                 quizOne={this.state.quizOne}/></Route>
+                <Route exact path="/" component={NameForm}/>
             </Switch>
         </BrowserRouter>
       </div>

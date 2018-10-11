@@ -35,7 +35,7 @@ class NameForm extends Component {
                     <input className="input-style" type="text" value={this.state.value} onChange={this.handleChange} />
                   </label>
                   <div>
-                    <NavLink to="/lets-play" activeClassName="selected">
+                    <NavLink to="/quiz" activeClassName="selected">
                       <input className="button-style" type="submit" value="jouez !" />
                     </NavLink>
                   </div>
