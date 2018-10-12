@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
+import './Resultat.css'
 import Header from './Header';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';

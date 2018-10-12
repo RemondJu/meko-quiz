@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Resultat.css'
 
 class Points extends Component {
     render() { 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import './NameForm.css';
+import './Resultat.css'
 
 
 class NameForm extends Component {
