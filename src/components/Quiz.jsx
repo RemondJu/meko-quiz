@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
 import './Resultat.css'
-import Header from './Header';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
+import PlayerUI from './PlayerUI.jsx'
 
 class Quiz extends Component {
     state = {  }
     render() { 
         return (
             <div className="Quiz">
-                <Header title="Burger quiz"/>
+                <PlayerUI value={this.props.value}/>
                  <Container className="p-3 mt-3">
                     <Row>
                         <Col className="text-center pb-5">

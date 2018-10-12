@@ -9,6 +9,9 @@ class Resultat extends Component {
     render() {
         return (
             <Container>
+                 <NavLink exact to="/"       activeClassName="selected">
+                    <button>Home</button>
+                </NavLink> 
                 <Row>
                     <Col>
                         <div className="banniere text-center">
@@ -29,9 +32,7 @@ class Resultat extends Component {
                         </div>
                     </Col>
                 </Row>
-                <NavLink exact to="/"       activeClassName="selected">
-                    <button>Home</button>
-                </NavLink> 
+               
             </Container >
         )
     }

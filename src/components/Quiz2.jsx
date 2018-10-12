@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
-import Header from './Header';
+import PlayerUI from './PlayerUI.jsx'
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
 
@@ -10,7 +10,7 @@ class Quiz2 extends Component {
     render() { 
         return (
             <div className="Quiz">
-                <Header title="Burger quiz"/>
+                <PlayerUI value={this.props.value}/>
                  <Container className="p-3 mt-3">
                     <Row>
                         <Col className="text-center pb-5">
@@ -53,7 +53,7 @@ class Quiz2 extends Component {
                     </Row>                    
                 </Container> 
                 <Col sm="2" className="offset-9 mt-4">
-                    <NavLink exact to="/" activeClassName="selected">
+                    <NavLink exact to="/resultat" activeClassName="selected">
                         <Button disabled={this.props.disabledNext} color="secondary">Next</Button>{' '}
                     </NavLink>
                 </Col>

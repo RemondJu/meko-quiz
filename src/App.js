@@ -4,7 +4,6 @@ import './App.css';
 import Quiz from './components/Quiz'
 import Quiz2 from './components/Quiz2'
 import NameForm from './components/NameForm.jsx'
-import PlayerUI from './components/PlayerUI.jsx'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 
@@ -32,7 +31,7 @@ const quizOne = {
       }
     },
     q2: {
-      question: "What wa JK Rowling's job before she wrote Harry Potter ?",
+      question: "What was JK Rowling's job before she wrote Harry Potter ?",
       reponse1: {
         reponse: "Lawyer",
         status: false
@@ -122,7 +121,8 @@ class App extends Component {
               handleBadAns={this.handleBadAnswer}
               quizOne={this.state.quizOne.questions}
               clearDisable={this.clearDisable}
-              q={this.state.quizOne.questions.q1} /></Route>
+              q={this.state.quizOne.questions.q1}
+              value={this.state.value} /></Route>
 
 
             <Route path="/quiz2"><Quiz2
@@ -135,16 +135,15 @@ class App extends Component {
               badAns={this.state.badAns}
               handleBadAns={this.handleBadAnswer}
               quizOne={this.state.quizOne.questions}
-              q={this.state.quizOne.questions.q2} /></Route>
+              q={this.state.quizOne.questions.q2}
+              value={this.state.value} /></Route>
 
             <Route exact path="/"><NameForm 
             type="text" 
             value={this.state.value} 
             onChange={this.handleChange} /></Route>
 
-
-            <Route path="/lets-play"><PlayerUI 
-            value={this.state.value} /></Route>
+            <Route path="/resultat"><Resultat/></Route>
 
           </Switch>
         </BrowserRouter>
