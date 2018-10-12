@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Resultat from './Resultat';
 import './App.css';
 import Quiz from './components/Quiz'
 import NameForm from './components/NameForm'
