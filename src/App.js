@@ -3,7 +3,8 @@ import Resultat from './Resultat';
 import './App.css';
 import Quiz from './components/Quiz'
 import Quiz2 from './components/Quiz2'
-import NameForm from './components/NameForm'
+import NameForm from './components/NameForm.jsx'
+import PlayerUI from './components/PlayerUI.jsx'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 
 
@@ -20,7 +21,7 @@ const quizOne = {
       reponse2: {
         reponse: "Sporty",
         status: false
-      },    
+      },
       reponse3: {
         reponse: "Ginger",
         status: false
@@ -28,7 +29,7 @@ const quizOne = {
       reponse4: {
         reponse: "Baby",
         status: false
-      }  
+      }
     },
     q2: {
       question: "What wa JK Rowling's job before she wrote Harry Potter ?",
@@ -39,7 +40,7 @@ const quizOne = {
       reponse2: {
         reponse: "Shop assistant",
         status: false
-      },    
+      },
       reponse3: {
         reponse: "English teacher",
         status: true
@@ -47,7 +48,7 @@ const quizOne = {
       reponse4: {
         reponse: "Accountant",
         status: false
-      }  
+      }
     }
   }
 }
@@ -55,18 +56,25 @@ const quizOne = {
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       quizOne: quizOne,
       goodAns: false,
       badAns: false,
       btnClassBad: 'secondary',
       btnClassGood: 'secondary',
       disabled: false,
-      disabledNext: true
-     }
-     this.handleGoodAnswer = this.handleGoodAnswer.bind(this)
-     this.handleBadAnswer = this.handleBadAnswer.bind(this)
-     this.clearDisable = this.clearDisable.bind(this)
+      disabledNext: true,
+      value: ''
+    }
+    this.handleGoodAnswer = this.handleGoodAnswer.bind(this)
+    this.handleBadAnswer = this.handleBadAnswer.bind(this)
+    this.clearDisable = this.clearDisable.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+
+  }
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
   }
 
   handleGoodAnswer() {
@@ -92,7 +100,7 @@ class App extends Component {
       btnClassBad: 'secondary',
       btnClassGood: 'secondary',
       disabled: false,
-      disabledNext: true, 
+      disabledNext: true,
     })
   }
 
@@ -100,37 +108,45 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BrowserRouter>               
-            <Switch>
+        <BrowserRouter>
+          <Switch>
 
-              <Route path="/quiz"><Quiz 
-                disabled={this.state.disabled}
-                disabledNext={this.state.disabledNext}
-                btnClassGood={this.state.btnClassGood}
-                btnClassBad={this.state.btnClassBad}
-                goodAns={this.state.goodAns}
-                handleGoodAns={this.handleGoodAnswer}
-                badAns={this.state.badAns}
-                handleBadAns={this.handleBadAnswer}
-                quizOne={this.state.quizOne.questions}
-                clearDisable={this.clearDisable}
-                q={this.state.quizOne.questions.q1}/></Route>
+            <Route path="/quiz"><Quiz
+              disabled={this.state.disabled}
+              disabledNext={this.state.disabledNext}
+              btnClassGood={this.state.btnClassGood}
+              btnClassBad={this.state.btnClassBad}
+              goodAns={this.state.goodAns}
+              handleGoodAns={this.handleGoodAnswer}
+              badAns={this.state.badAns}
+              handleBadAns={this.handleBadAnswer}
+              quizOne={this.state.quizOne.questions}
+              clearDisable={this.clearDisable}
+              q={this.state.quizOne.questions.q1} /></Route>
 
 
-                <Route path="/quiz2"><Quiz2 
-                disabled={this.state.disabled}
-                disabledNext={this.state.disabledNext}
-                btnClassGood={this.state.btnClassGood}
-                btnClassBad={this.state.btnClassBad}
-                goodAns={this.state.goodAns}
-                handleGoodAns={this.handleGoodAnswer}
-                badAns={this.state.badAns}
-                handleBadAns={this.handleBadAnswer}
-                quizOne={this.state.quizOne.questions}
-                q={this.state.quizOne.questions.q2}/></Route>
+            <Route path="/quiz2"><Quiz2
+              disabled={this.state.disabled}
+              disabledNext={this.state.disabledNext}
+              btnClassGood={this.state.btnClassGood}
+              btnClassBad={this.state.btnClassBad}
+              goodAns={this.state.goodAns}
+              handleGoodAns={this.handleGoodAnswer}
+              badAns={this.state.badAns}
+              handleBadAns={this.handleBadAnswer}
+              quizOne={this.state.quizOne.questions}
+              q={this.state.quizOne.questions.q2} /></Route>
 
-                <Route exact path="/" component={NameForm}/>
-            </Switch>
+            <Route exact path="/"><NameForm 
+            type="text" 
+            value={this.state.value} 
+            onChange={this.handleChange} /></Route>
+
+
+            <Route path="/lets-play"><PlayerUI 
+            value={this.state.value} /></Route>
+
+          </Switch>
         </BrowserRouter>
       </div>
     );
