@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
+import './Resultat.css'
 import Header from './Header';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
@@ -48,6 +49,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             onClick={this.props.handleBadAns}
                             color={this.props.btnClassBad}
+
                             >D: {this.props.q.reponse4.reponse}</Button>{' '}
                         </Col>                    
                     </Row>                    

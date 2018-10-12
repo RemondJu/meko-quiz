@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Resultat from './Resultat';
+import Resultat from './components/Resultat';
 import './App.css';
 import Quiz from './components/Quiz'
 import Quiz2 from './components/Quiz2'

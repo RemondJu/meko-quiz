@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Felicitation from './Felicitation';
 import Score from './Score';
+import { NavLink } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 import './Resultat.css';
 
@@ -28,6 +29,9 @@ class Resultat extends Component {
                         </div>
                     </Col>
                 </Row>
+                <NavLink exact to="/"       activeClassName="selected">
+                    <button>Home</button>
+                </NavLink> 
             </Container >
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './NameForm.css';
+import './Resultat.css'
 
 
 class NameForm extends Component {

@@ -1,4 +1,5 @@
 import React from 'react';
+import './Resultat.css'
 
 const Question = (props) => {
     return ( 
