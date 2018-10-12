@@ -9,7 +9,7 @@ const Header = (props) => {
             <span className="span1">
                 <NavLink exact to="/" activeClassName="selected">
                     <Button color="secondary">Home</Button>{' '}
-                </NavLink>Equipe Burger
+                </NavLink>Julien
             </span>
             <h1>{props.title}</h1>
             <span className="span2">0 points</span>
