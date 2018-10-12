@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
 import Header from './Header';
+import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
 
 class Quiz extends Component {
@@ -44,7 +45,10 @@ class Quiz extends Component {
                             onClick={this.props.handleBadAns}
                             color={this.props.btnClassBad}
                             >D: {this.props.quizOne.questions.q1.reponse4.reponse}</Button>{' '}
-                        </Col>                    
+                        </Col>
+                        <NavLink to="/resultats" activeClassName="selected">
+                            <button>Click me</button>
+                        </NavLink>                    
                     </Row>
                 </Container> 
             </div>              

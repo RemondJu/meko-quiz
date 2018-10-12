@@ -75,6 +75,7 @@ class App extends Component {
                 handleBadAns={this.handleBadAnswer}
                 quizOne={this.state.quizOne}/></Route>
                 <Route exact path="/" component={NameForm}/>
+                <Route path ="/resultats" component={Resultat}/>
             </Switch>
         </BrowserRouter>
       </div>
