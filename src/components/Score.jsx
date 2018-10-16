@@ -7,8 +7,8 @@ class Score extends Component {
         return (
             <div className="Score">
                 <p>Score :</p>
-                <Points />
-                <Equipe />
+                <Points points={this.props.points}/>
+                <Equipe value={this.props.value}/>
             </div>
         )
     }

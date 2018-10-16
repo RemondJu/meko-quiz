@@ -6,7 +6,8 @@ class Felicitation extends Component {
         return ( 
             <div className="Felicitation">
                 <p>BRAVO !</p>
-                <BonnesReponses />
+                <BonnesReponses 
+                nbGoodAns={this.props.nbGoodAns}/>
             </div>
          );
     }

@@ -16,7 +16,7 @@ class PlayerUI extends Component {
             <Button outline color="primary">Home</Button> {' '}
             <Badge color="primary" >{this.props.value}</Badge>
           </NavbarBrand>
-          <Button outline color="primary" onClick={this.toggleNavbar}>0 points</Button>
+          <Button outline color="primary" onClick={this.toggleNavbar}>{this.props.points} points</Button>
         </Navbar>
       </div>
     );

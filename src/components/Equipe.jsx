@@ -4,7 +4,7 @@ class Equipe extends Component {
 render() {
         return (
             <div className="Equipe">
-                <p>Team Burger</p>
+                <p>{this.props.value}</p>
             </div>
         );
     }

@@ -2,21 +2,22 @@ import React, { Component } from 'react';
 import Question from './Question'
 import './Quiz.css'
 import './Resultat.css'
-import Header from './Header';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
+import PlayerUI from './PlayerUI.jsx'
 
 class Quiz extends Component {
     state = {  }
     render() { 
         return (
             <div className="Quiz">
-                <Header title="Burger quiz"/>
+                <PlayerUI value={this.props.value}
+                points={this.props.points}/>
                  <Container className="p-3 mt-3">
                     <Row>
                         <Col className="text-center pb-5">
                             <Question 
-                            quizOne={this.props.quizOne.q1}/>
+                            quizOne={this.props.q}/>
                         </Col>
                     </Row>   
                     <hr/>        
@@ -24,15 +25,18 @@ class Quiz extends Component {
                         <Col >
                              <Button block 
                              disabled={this.props.disabled}
-                            onClick={this.props.handleGoodAns}
-                            color={this.props.btnClassGood}
+                             onClick={() => this.props.handleAns(this.props.q.reponse1.status, "reponse1")}
+                            // onClick={this.props.handleGoodAns}
+                            color={this.props.btnClass1}
                             >A: {this.props.q.reponse1.reponse}</Button>{' '}
                         </Col> 
                         <Col>
                              <Button block
                              disabled={this.props.disabled}
-                            onClick={this.props.handleBadAns}
-                            color={this.props.btnClassBad}
+                             onClick={() => this.props.handleAns(this.props.q.reponse2.status, "reponse2")}
+                             
+                            // onClick={this.props.handleBadAns}
+                            color={this.props.btnClass2}
                             >B: {this.props.q.reponse2.reponse}</Button>{' '}
                         </Col>                     
                     </Row>
@@ -40,22 +44,24 @@ class Quiz extends Component {
                         <Col>
                             <Button block
                             disabled={this.props.disabled}
-                            onClick={this.props.handleBadAns}
-                            color={this.props.btnClassBad}
+                            onClick={() => this.props.handleAns(this.props.q.reponse3.status, "reponse3")}
+                            // onClick={this.props.handleBadAns}
+                            color={this.props.btnClass3}
                             >C: {this.props.q.reponse3.reponse}</Button>{' '}
                         </Col> 
                         <Col>
                             <Button block
                             disabled={this.props.disabled}
-                            onClick={this.props.handleBadAns}
-                            color={this.props.btnClassBad}
+                            onClick={() => this.props.handleAns(this.props.q.reponse4.status, "reponse4")}
+                            // onClick={this.props.handleBadAns}
+                            color={this.props.btnClass4}
 
                             >D: {this.props.q.reponse4.reponse}</Button>{' '}
                         </Col>                    
                     </Row>                    
                 </Container> 
                 <Col sm="2" className="offset-9 mt-4">
-                    <NavLink to="/quiz2" activeClassName="selected">
+                    <NavLink to={this.props.pathquiz} activeClassName="selected">
                         <Button disabled={this.props.disabledNext} 
                         onClick={this.props.clearDisable}color="secondary">Next</Button>{' '}
                     </NavLink>
