@@ -5,52 +5,10 @@ import Quiz from './components/Quiz'
 // import Quiz2 from './components/Quiz2'
 import NameForm from './components/NameForm.jsx'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
-
-
-const quizOne = {
-  name: "Quiz 1",
-  difficulty: "beginner",
-  questions: {
-    q1: {
-      question: "What was Victoria Beckham's nickname when she was in the Spice Girls",
-      reponse1: {
-        reponse: "Posh",
-        status: true
-      },
-      reponse2: {
-        reponse: "Sporty",
-        status: false
-      },
-      reponse3: {
-        reponse: "Ginger",
-        status: false
-      },
-      reponse4: {
-        reponse: "Baby",
-        status: false
-      }
-    },
-    q2: {
-      question: "What was JK Rowling's job before she wrote Harry Potter ?",
-      reponse1: {
-        reponse: "Lawyer",
-        status: false
-      },
-      reponse2: {
-        reponse: "Shop assistant",
-        status: false
-      },
-      reponse3: {
-        reponse: "English teacher",
-        status: true
-      },
-      reponse4: {
-        reponse: "Accountant",
-        status: false
-      }
-    }
-  }
-}
+import AccueilAdmin from './components/AccueilAdmin';
+import ModifyQuiz from './components/ModifyQuiz'
+import AddQuiz from './components/AddQuiz'
+import DeleteQuiz from './components/DeleteQuiz'
 
 const quizOne2 = {
   name: "Quiz 1",
@@ -103,7 +61,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizOne: quizOne,
       quizOne2: quizOne2,
       goodAns: false,
       badAns: false,
@@ -227,6 +184,10 @@ class App extends Component {
             value={this.state.value}
             nbGoodAns={this.state.nbGoodAns}/></Route>
 
+            <Route path="/admin"><AccueilAdmin /></Route>
+            <Route path="/modify"><ModifyQuiz /></Route>
+            <Route path="/add"><AddQuiz /></Route>
+            <Route path="/delete"><DeleteQuiz /></Route>
           </Switch>
         </BrowserRouter>
       </div>
