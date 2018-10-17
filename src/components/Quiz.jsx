@@ -21,15 +21,15 @@ class Quiz extends Component {
                         </Col>
                     </Row>   
                     <hr/>        
-                    <Row className="mb-2">
-                        <Col >
+                    <Row className="mb-lg-2">
+                        <Col sm="12"  lg="6">
                              <Button block 
                              disabled={this.props.disabled}
                              onClick={() => this.props.handleAns(this.props.q.reponse1.status, "reponse1")}
                             color={this.props.btnClass1}
                             >A: {this.props.q.reponse1.reponse}</Button>{' '}
                         </Col> 
-                        <Col>
+                        <Col sm="12" lg="6">
                              <Button block
                              disabled={this.props.disabled}
                              onClick={() => this.props.handleAns(this.props.q.reponse2.status, "reponse2")}
@@ -38,14 +38,14 @@ class Quiz extends Component {
                         </Col>                     
                     </Row>
                     <Row>
-                        <Col>
+                        <Col sm="12" lg="6">
                             <Button block
                             disabled={this.props.disabled}
                             onClick={() => this.props.handleAns(this.props.q.reponse3.status, "reponse3")}
                             color={this.props.btnClass3}
                             >C: {this.props.q.reponse3.reponse}</Button>{' '}
                         </Col> 
-                        <Col>
+                        <Col sm="12" lg="6">
                             <Button block
                             disabled={this.props.disabled}
                             onClick={() => this.props.handleAns(this.props.q.reponse4.status, "reponse4")}
@@ -55,7 +55,7 @@ class Quiz extends Component {
                         </Col>                    
                     </Row>                    
                 </Container> 
-                <Col sm="2" className="offset-9 mt-4">
+                <Col sm="2" className="offset-lg-9 mt-4">
                     <NavLink to={this.props.pathquiz} activeClassName="selected">
                         <Button disabled={this.props.disabledNext} 
                         onClick={this.props.clearDisable}color="secondary">Next</Button>{' '}
