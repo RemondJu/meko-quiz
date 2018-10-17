@@ -4,7 +4,7 @@ class BonnesReponses extends Component {
     render() { 
         return (
             <div className="BonnesReponses">
-                <p>Bonnes réponses: {this.props.nbGoodAns}/10</p>
+                <p>Bonnes réponses: {this.props.nbGoodAns}/{this.props.nbQuestions}</p>
             </div>
         );
     }

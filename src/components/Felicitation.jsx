@@ -5,8 +5,9 @@ class Felicitation extends Component {
     render() {
         return ( 
             <div className="Felicitation">
-                <p>BRAVO !</p>
+                <p>{this.props.messageResult}</p>
                 <BonnesReponses 
+                nbQuestions = {this.props.nbQuestions}
                 nbGoodAns={this.props.nbGoodAns}/>
             </div>
          );

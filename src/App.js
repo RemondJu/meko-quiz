@@ -114,13 +114,29 @@ class App extends Component {
       disabled: false,
       disabledNext: true,
       value: '',
+      messageResult: "Bravo !",
       currentPoints: 0,   
       nbGoodAns: 0,   
+      nbQuestions: quizOne2.questions.length,
     }
     this.clearDisable = this.clearDisable.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
+    this.messageDyn = this.messageDyn.bind(this);
+    this.clearNbQuestions = this.clearNbQuestions.bind(this);
 
+  }
+
+  messageDyn(){
+    if (this.state.nbGoodAns > 3) {
+      this.setState({
+        messageResult: "Bravo !"
+      })
+    } else {
+      this.setState({
+        messageResult: "Bof..."
+      })
+    }
   }
 
   handleChange(event) {
@@ -154,6 +170,13 @@ class App extends Component {
       disabled: false,
       disabledNext: true,
     })
+  }
+
+  clearNbQuestions() {
+    console.log("bijour")
+    this.setState({
+      nbGoodAns: 0
+    });
   }
 
 
@@ -223,7 +246,12 @@ class App extends Component {
             value={this.state.value} 
             onChange={this.handleChange} /></Route>
 
-            <Route path="/resultat"><Resultat points={this.state.currentPoints}
+            <Route path="/resultat"><Resultat 
+            clearNbQuestions = {this.clearNbQuestions}
+            nbQuestions = {this.state.nbQuestions}
+            messageDyn = {this.messageDyn}
+            messageResult = {this.state.messageResult}
+            points={this.state.currentPoints}
             value={this.state.value}
             nbGoodAns={this.state.nbGoodAns}/></Route>
 
