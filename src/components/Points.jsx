@@ -5,7 +5,7 @@ class Points extends Component {
     render() { 
         return (
             <div className="Points">
-                <p>500 Pts</p>  
+                <p>{this.props.points} Pts</p>  
             </div>
         );
     }

@@ -9,6 +9,9 @@ class Resultat extends Component {
     render() {
         return (
             <Container>
+                <NavLink exact to="/" activeClassName="selected">
+                    <button>Home</button>
+                </NavLink> 
                 <Row>
                     <Col>
                         <div className="banniere text-center">
@@ -18,20 +21,20 @@ class Resultat extends Component {
                             <div>
                                 <Col>
                                     <div className="scoreEquipe">
-                                        <Score />
+                                        <Score 
+                                        value={this.props.value}
+                                        points={this.props.points}/>
                                         <div>
                                             <img className="trophee" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Trophee.png" alt="Coupe-Score" />
                                         </div>
-                                        <Felicitation />
+                                        <Felicitation 
+                                        nbGoodAns={this.props.nbGoodAns}/>
                                     </div>
                                 </Col>
                             </div>
                         </div>
                     </Col>
                 </Row>
-                <NavLink exact to="/"       activeClassName="selected">
-                    <button>Home</button>
-                </NavLink> 
             </Container >
         )
     }
