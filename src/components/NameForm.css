@@ -41,6 +41,7 @@
   text-align: center;
   color: #EFF0F0;
   font-size: 1.5em;
+
 }
 
 .input-style{
@@ -59,6 +60,7 @@
   color: white;
   text-align: center;
 }
+
 .button-style:active{
   outline: none;
 }
