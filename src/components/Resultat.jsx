@@ -6,11 +6,15 @@ import { Container, Row, Col } from 'reactstrap';
 import './Resultat.css';
 
 class Resultat extends Component {
+    componentDidMount(){
+        this.props.messageDyn()
+    }
+
     render() {
         return (
             <Container>
                 <NavLink exact to="/" activeClassName="selected">
-                    <button>Home</button>
+                    <button onClick={this.props.clearNbQuestions}>Home</button>
                 </NavLink> 
                 <Row>
                     <Col>
@@ -28,6 +32,8 @@ class Resultat extends Component {
                                             <img className="trophee" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Trophee.png" alt="Coupe-Score" />
                                         </div>
                                         <Felicitation 
+                                        messageResult = {this.props.messageResult}
+                                        nbQuestions = {this.props.nbQuestions}
                                         nbGoodAns={this.props.nbGoodAns}/>
                                     </div>
                                 </Col>
