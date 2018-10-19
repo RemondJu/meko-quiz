@@ -26,7 +26,6 @@ class Quiz extends Component {
                              <Button block 
                              disabled={this.props.disabled}
                              onClick={() => this.props.handleAns(this.props.q.reponse1.status, "reponse1")}
-                            // onClick={this.props.handleGoodAns}
                             color={this.props.btnClass1}
                             >A: {this.props.q.reponse1.reponse}</Button>{' '}
                         </Col> 
@@ -34,8 +33,6 @@ class Quiz extends Component {
                              <Button block
                              disabled={this.props.disabled}
                              onClick={() => this.props.handleAns(this.props.q.reponse2.status, "reponse2")}
-                             
-                            // onClick={this.props.handleBadAns}
                             color={this.props.btnClass2}
                             >B: {this.props.q.reponse2.reponse}</Button>{' '}
                         </Col>                     
@@ -45,7 +42,6 @@ class Quiz extends Component {
                             <Button block
                             disabled={this.props.disabled}
                             onClick={() => this.props.handleAns(this.props.q.reponse3.status, "reponse3")}
-                            // onClick={this.props.handleBadAns}
                             color={this.props.btnClass3}
                             >C: {this.props.q.reponse3.reponse}</Button>{' '}
                         </Col> 
@@ -53,7 +49,6 @@ class Quiz extends Component {
                             <Button block
                             disabled={this.props.disabled}
                             onClick={() => this.props.handleAns(this.props.q.reponse4.status, "reponse4")}
-                            // onClick={this.props.handleBadAns}
                             color={this.props.btnClass4}
 
                             >D: {this.props.q.reponse4.reponse}</Button>{' '}
