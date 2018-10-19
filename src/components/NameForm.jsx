@@ -11,6 +11,7 @@ class NameForm extends Component {
     return (
       <div className="form-style">
         <div>
+          <img className="logo_quizz" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/Logo_Meko_Quizz.png" alt="Logo_Quizz"/>
           <h1 className="title-style">Choisis ton nom de Quizeur !</h1>
           <form >
             <label>
@@ -18,7 +19,7 @@ class NameForm extends Component {
             </label>
             <div>
               <NavLink to="/quiz1" activeClassName="selected">
-                <Button color={this.props.buttonColor} size="lg" type="submit" disabled={this.props.disabledPlay} >Jouez !</Button>
+                <input className="button-style" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/btn_unpressed.png" disabled={this.props.disabledPlay} type="image" value="jouez !"/>
               </NavLink>
             </div>
           </form>
