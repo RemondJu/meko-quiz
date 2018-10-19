@@ -9,6 +9,7 @@
   text-align: center;
   color: white;
   margin: 20px 0px;
+  color: white;
 }
 
 .input-style{
@@ -20,22 +21,6 @@
   background-color: rgb(223, 223, 223);
 }
 
-.button-style{
-  width : 200px;
-  height: 200px;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 2em;
-  color: white;
-  text-align: center;
-  padding: 20px 20px;
-  border-radius: 50%;
-  background-color: rgb(255, 50, 50);
-  margin: 20px 0px;
-}
-.button-style:active{
-  outline: none;
-}
 
 label{
   width: 90%
