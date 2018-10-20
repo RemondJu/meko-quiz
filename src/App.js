@@ -62,10 +62,10 @@ class App extends Component {
     super(props);
     this.state = {
       quizOne2: quizOne2,
-      reponse1: 'secondary',
-      reponse2: 'secondary',
-      reponse3: 'secondary',
-      reponse4: 'secondary',
+      reponse1Click: false,
+      reponse2Click: false,
+      reponse3Click: false,
+      reponse4Click: false,
       disabled: false,
       disabledNext: true,
       disabledPlay : true,
@@ -114,7 +114,6 @@ class App extends Component {
   handleAnswer(answerStatus, reponse) {
     if (answerStatus) {
       this.setState({
-        [reponse]: "success",
         disabledNext: false,
         disabled: true,
         currentPoints: this.state.currentPoints + 50,
@@ -122,7 +121,7 @@ class App extends Component {
       })
     } else {
       this.setState({
-        [reponse]: "danger",
+       [reponse]: true,
         disabled: true,
         disabledNext: false,
       })
@@ -131,10 +130,10 @@ class App extends Component {
 
   clearDisable() {
     this.setState({
-      reponse1: 'secondary',
-      reponse2: 'secondary',
-      reponse3: 'secondary',
-      reponse4: 'secondary',
+      reponse1Click: false,
+      reponse2Click: false,
+      reponse3Click: false,
+      reponse4Click: false,
       disabled: false,
       disabledNext: true,
     })
@@ -164,10 +163,10 @@ class App extends Component {
                     key={question.id}
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
-                    btnClass1={this.state.reponse1}
-                    btnClass2={this.state.reponse2}
-                    btnClass4={this.state.reponse4}
-                    btnClass3={this.state.reponse3}
+                    btnClick1={this.state.reponse1Click}
+                    btnClick2={this.state.reponse2Click}
+                    btnClick4={this.state.reponse4Click}
+                    btnClick3={this.state.reponse3Click}
                     clearDisable={this.clearDisable}
                     handleAns={this.handleAnswer}
                     q={question}
@@ -181,11 +180,10 @@ class App extends Component {
                     key={question.id}
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
-                    btnClass={this.state.btnClass}
-                    btnClass1={this.state.reponse1}
-                    btnClass2={this.state.reponse2}
-                    btnClass4={this.state.reponse4}
-                    btnClass3={this.state.reponse3}
+                    btnClick1={this.state.reponse1Click}
+                    btnClick2={this.state.reponse2Click}
+                    btnClick4={this.state.reponse4Click}
+                    btnClick3={this.state.reponse3Click}
                     clearDisable={this.clearDisable}
                     handleAns={this.handleAnswer}
                     q={question}
@@ -193,7 +191,6 @@ class App extends Component {
                     points={this.state.currentPoints}
                     value={this.state.value} /></Route>)
               }
-
             })}
 
             <Route exact path="/"><NameForm
