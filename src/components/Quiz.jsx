@@ -13,7 +13,7 @@ class Quiz extends Component {
             <div className="Quiz">
                 <PlayerUI value={this.props.value}
                 points={this.props.points}/>
-                 <Container className="p-3 mt-3">
+                 <Container className="questionContainer p-3">
                     <Row>
                         <Col className="text-center pb-5">
                             <Question 

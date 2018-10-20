@@ -1,6 +1,7 @@
-.container{
+.questionContainer{
     background-color: rgba(91, 91, 92, 0.281);;
     border-radius: 15px;
+    margin-top: 150px;
 }
 .btn {
     border-color: rgb(92, 92, 92) !important;
