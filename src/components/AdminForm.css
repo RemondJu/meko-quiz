@@ -1,0 +1,8 @@
+.AddForm, table{
+    background-color: rgb(245, 245, 220, 0.6) !important;
+    border-radius: 8px;
+    padding: 12px;
+}
+.listBtn{
+    margin-left: 90%;
+}

@@ -1,14 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Button } from 'reactstrap';
+import { Button, Container, Table } from 'reactstrap';
+import './AdminForm.css'
 
-const DeleteQuiz = () => {
+const quizList=[{name: "Quiz1", difficulty: "Débutant"}, {name: "Quiz2", difficulty: "Confirmé"}, {name: "Quiz3", difficulty: "Expert"}]
+  
+
+class DeleteQuiz extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { 
+            quizList: quizList,
+         }
+    }
+
+    render() { 
     return ( 
         <div className="DeleteQuiz">
-            <h1 className="adminTitle">Supprimer un quiz :</h1>
-            <NavLink to="/admin" activeClassName="selected"><Button color="primary" size="lg" block>Accueil Administrateur</Button ></NavLink>
+            <Container>
+                <h1 className="adminTitle">Supprimer un quiz :</h1>
+                <NavLink to="/admin" activeClassName="selected"><Button className="mb-4" color="primary" size="lg" block>Accueil Administrateur</Button ></NavLink>
+                <Table className="mt-5" hover>
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Nom du quiz</th>
+                        <th>Difficulté</th>
+                        <th>Nombre de questions</th>
+                        <th>Supprimer</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {quizList.map((quiz, index) => {
+                        return (
+                            <tr>
+                                <th scope="row">{index}</th>
+                                <td>{quiz.name}</td>
+                                <td>{quiz.difficulty}</td>
+                                <td>{this.state.quizList.length}</td>
+                                <td><Button>X</Button></td>
+                            </tr>
+                        )
+                    })}
+                    </tbody>
+                </Table>
+            </Container>            
         </div>
      );
+    }
 }
  
 export default DeleteQuiz;
