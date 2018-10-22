@@ -62,18 +62,18 @@ class App extends Component {
     super(props);
     this.state = {
       quizOne2: quizOne2,
-      goodAns: false,
-      badAns: false,
       reponse1: 'secondary',
       reponse2: 'secondary',
       reponse3: 'secondary',
       reponse4: 'secondary',
       disabled: false,
       disabledNext: true,
-      value: '',
+      disabledPlay : true,
+      value: 'Player',
       messageResult: "Bravo !",
       currentPoints: 0,   
       nbGoodAns: 0,   
+      buttonColor: "danger",
       nbQuestions: quizOne2.questions.length,
 
     }
@@ -86,7 +86,7 @@ class App extends Component {
   }
 
   messageDyn(){
-    if (this.state.nbGoodAns > 3) {
+    if (this.state.nbGoodAns >= this.state.nbQuestions / 2) {
       this.setState({
         messageResult: "Bravo !"
       })
@@ -117,7 +117,7 @@ class App extends Component {
         [reponse]: "success",
         disabledNext: false,
         disabled: true,
-        currentPoints: this.state.currentPoints + 1,
+        currentPoints: this.state.currentPoints + 50,
         nbGoodAns: this.state.nbGoodAns + 1
       })
     } else {
@@ -141,7 +141,6 @@ class App extends Component {
   }
 
   clearNbQuestions() {
-    console.log("bijour")
     this.setState({
       nbGoodAns: 0
     });
@@ -165,16 +164,10 @@ class App extends Component {
                     key={question.id}
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
-                    btnClassGood={this.state.btnClassGood}
-                    btnClassBad={this.state.btnClassBad}
                     btnClass1={this.state.reponse1}
                     btnClass2={this.state.reponse2}
                     btnClass4={this.state.reponse4}
                     btnClass3={this.state.reponse3}
-                    goodAns={this.state.goodAns}
-                    handleGoodAns={this.handleGoodAnswer}
-                    badAns={this.state.badAns}
-                    handleBadAns={this.handleBadAnswer}
                     clearDisable={this.clearDisable}
                     handleAns={this.handleAnswer}
                     q={question}
@@ -188,17 +181,11 @@ class App extends Component {
                     key={question.id}
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
-                    btnClassGood={this.state.btnClassGood}
-                    btnClassBad={this.state.btnClassBad}
                     btnClass={this.state.btnClass}
                     btnClass1={this.state.reponse1}
                     btnClass2={this.state.reponse2}
                     btnClass4={this.state.reponse4}
                     btnClass3={this.state.reponse3}
-                    goodAns={this.state.goodAns}
-                    handleGoodAns={this.handleGoodAnswer}
-                    badAns={this.state.badAns}
-                    handleBadAns={this.handleBadAnswer}
                     clearDisable={this.clearDisable}
                     handleAns={this.handleAnswer}
                     q={question}
@@ -215,7 +202,6 @@ class App extends Component {
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               disabledPlay={this.state.disabledPlay}
-              getButtonColor={this.getButtonColor} 
               buttonColor={this.state.buttonColor}/>
               </Route>
 
