@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import Question from './Question'
-import './Quiz.css'
-import './Resultat.css'
+import Question from './Question';
+import './Quiz.css';
+import './Resultat.css';
 import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
-import PlayerUI from './PlayerUI.jsx'
+import PlayerUI from './PlayerUI.jsx';
+import Reponse from './Reponse';
 
 class Quiz extends Component {
     state = {  }
@@ -23,35 +24,46 @@ class Quiz extends Component {
                     <hr/>        
                     <Row className="mb-2">
                         <Col >
-                             <Button block 
-                             disabled={this.props.disabled}
-                             onClick={() => this.props.handleAns(this.props.q.reponse1.status, "reponse1")}
-                            color={this.props.btnClass1}
-                            >A: {this.props.q.reponse1.reponse}</Button>{' '}
+                            <Reponse
+                            disabled={this.props.disabled}
+                            handleAns={this.props.handleAns}
+                            reponse={this.props.q.reponse1}
+                            btnClick={this.props.btnClick1}
+                            reponseClick="reponse1Click"
+                            lettre="A :"
+                            />
                         </Col> 
                         <Col>
-                             <Button block
-                             disabled={this.props.disabled}
-                             onClick={() => this.props.handleAns(this.props.q.reponse2.status, "reponse2")}
-                            color={this.props.btnClass2}
-                            >B: {this.props.q.reponse2.reponse}</Button>{' '}
+                            <Reponse
+                            disabled={this.props.disabled}
+                            handleAns={this.props.handleAns}
+                            reponse={this.props.q.reponse2}
+                            btnClick={this.props.btnClick2}
+                            reponseClick="reponse2Click"
+                            lettre="B :"
+                            />
                         </Col>                     
                     </Row>
                     <Row>
                         <Col>
-                            <Button block
+                            <Reponse
                             disabled={this.props.disabled}
-                            onClick={() => this.props.handleAns(this.props.q.reponse3.status, "reponse3")}
-                            color={this.props.btnClass3}
-                            >C: {this.props.q.reponse3.reponse}</Button>{' '}
+                            handleAns={this.props.handleAns}
+                            reponse={this.props.q.reponse3}
+                            btnClick={this.props.btnClick3}
+                            reponseClick="reponse3Click"
+                            lettre="C :"
+                            />
                         </Col> 
                         <Col>
-                            <Button block
+                            <Reponse
                             disabled={this.props.disabled}
-                            onClick={() => this.props.handleAns(this.props.q.reponse4.status, "reponse4")}
-                            color={this.props.btnClass4}
-
-                            >D: {this.props.q.reponse4.reponse}</Button>{' '}
+                            handleAns={this.props.handleAns}
+                            reponse={this.props.q.reponse4}
+                            btnClick={this.props.btnClick4}
+                            reponseClick="reponse4Click"
+                            lettre="D :"
+                            />
                         </Col>                    
                     </Row>                    
                 </Container> 
