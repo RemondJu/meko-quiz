@@ -10,58 +10,42 @@ import ModifyQuiz from './components/ModifyQuiz'
 import AddQuiz from './components/AddQuiz'
 import DeleteQuiz from './components/DeleteQuiz'
 
-const quizOne2 = {
-  name: "Quiz 1",
-  difficulty: "beginner",
-  questions: [
+const quizOne3 =  [
     {
       id: 1,
+      name: 'Quiz 1',
+      difficulty: 'beginner',
       question: "What was Victoria Beckham's nickname when she was in the Spice Girls",
-      reponse1: {
-        reponse: "Posh",
-        status: true
-      },
-      reponse2: {
-        reponse: "Sporty",
-        status: false
-      },
-      reponse3: {
-        reponse: "Ginger",
-        status: false
-      },
-      reponse4: {
-        reponse: "Baby",
-        status: false
-      }
+      reponse1: "Posh",
+      status1: true,
+      reponse2: "Sporty",
+      status2: false,
+      reponse3: "Ginger",
+      status3: false,
+      reponse4: "Baby",
+      status4: false,
     },
     {
       id: 2,
+      name: 'Quiz 1',
+      difficulty: 'beginner',
       question: "What was JK Rowling's job before she wrote Harry Potter ?",
-      reponse1: {
-        reponse: "Lawyer",
-        status: false
-      },
-      reponse2: {
-        reponse: "Shop assistant",
-        status: false
-      },
-      reponse3: {
-        reponse: "English teacher",
-        status: true
-      },
-      reponse4: {
-        reponse: "Accountant",
-        status: false
-      }
+      reponse1: "Lawyer",
+      status1: false,
+      reponse2: "Shop assistant",
+      status2: false,
+      reponse3: "English teacher",
+      status3: true,
+      reponse4: "Accountant",
+      status4: false,
     }
   ]
-}
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizOne2: quizOne2,
+      quizOne3: quizOne3,
       reponse1Click: false,
       reponse2Click: false,
       reponse3Click: false,
@@ -74,7 +58,7 @@ class App extends Component {
       currentPoints: 0,   
       nbGoodAns: 0,   
       buttonColor: "danger",
-      nbQuestions: quizOne2.questions.length,
+      nbQuestions: quizOne3.length,
 
     }
     this.clearDisable = this.clearDisable.bind(this);
@@ -152,11 +136,11 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
 
-            {this.state.quizOne2.questions.map(question => {
+            {this.state.quizOne3.map(question => {
               let pathquiz = `/quiz${question.id}`
               let pathQuiz2 = `/quiz${question.id + 1}`
               let returnHome = `/resultat`
-              if (question.id + 1 > this.state.quizOne2.questions.length) {
+              if (question.id + 1 > this.state.quizOne3.length) {
                 return (
 
                   <Route path={pathquiz}><Quiz

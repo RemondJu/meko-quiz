@@ -10,7 +10,7 @@ class Reponse extends Component {
 
     getAnswerBtnClass() {
         let btnClass = "secondary"
-        if ((this.props.disabled) && (this.props.reponse.status)){
+        if ((this.props.disabled) && (this.props.status)){
             btnClass="success"
         } else if ((this.props.disabled) && (this.props.btnClick)){
             btnClass="danger"
@@ -25,7 +25,7 @@ class Reponse extends Component {
             <Button block 
             disabled={this.props.disabled}
             color={this.getAnswerBtnClass()}
-            onClick={() => this.props.handleAns(this.props.reponse.status, this.props.reponseClick)}>{this.props.lettre} {this.props.reponse.reponse}</Button>
+            onClick={() => this.props.handleAns(this.props.status, this.props.reponseClick)}>{this.props.lettre} {this.props.reponse}</Button>
          );
     }
 }
