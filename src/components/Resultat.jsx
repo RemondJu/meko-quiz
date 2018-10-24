@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Felicitation from './Felicitation';
 import Score from './Score';
 import { NavLink } from 'react-router-dom';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Button } from 'reactstrap';
 import './Resultat.css';
 
 class Resultat extends Component {
@@ -14,7 +14,7 @@ class Resultat extends Component {
         return (
             <Container>
                 <NavLink exact to="/" activeClassName="selected">
-                    <button onClick={this.props.clearNbQuestions}>Home</button>
+                    <Button className='Home' color="secondary" size="lg" onClick={this.props.clearNbQuestions}>Home</Button>
                 </NavLink> 
                 <Row>
                     <Col>
