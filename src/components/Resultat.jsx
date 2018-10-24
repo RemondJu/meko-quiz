@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 import Felicitation from './Felicitation';
 import Score from './Score';
 import { Navbar, Button, Modal, ModalBody, Container, Row, Col } from 'reactstrap';
+
 import './Resultat.css';
 import BestPlayers from './BestPlayers';
 
@@ -56,6 +57,7 @@ class Resultat extends Component {
                                             messageResult = {this.props.messageResult}
                                             nbQuestions = {this.props.nbQuestions}
                                             nbGoodAns={this.props.nbGoodAns}/>
+
                                         </div>
                                     </Col>
                                 </div>
