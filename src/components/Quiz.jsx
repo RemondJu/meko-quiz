@@ -28,6 +28,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
                             reponse={this.props.q.reponse1}
+                            status={this.props.q.status1}
                             btnClick={this.props.btnClick1}
                             reponseClick="reponse1Click"
                             lettre="A :"
@@ -38,6 +39,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
                             reponse={this.props.q.reponse2}
+                            status={this.props.q.status2}
                             btnClick={this.props.btnClick2}
                             reponseClick="reponse2Click"
                             lettre="B :"
@@ -50,6 +52,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
                             reponse={this.props.q.reponse3}
+                            status={this.props.q.status3}
                             btnClick={this.props.btnClick3}
                             reponseClick="reponse3Click"
                             lettre="C :"
@@ -60,6 +63,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
                             reponse={this.props.q.reponse4}
+                            status={this.props.q.status4}
                             btnClick={this.props.btnClick4}
                             reponseClick="reponse4Click"
                             lettre="D :"
