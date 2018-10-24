@@ -87,12 +87,12 @@ class App extends Component {
       const score = this.state.currentPoints;
       const tab = [...this.state.bestPlayersTab];
       this.setState({
-          bestPlayersTab : [...tab, {name : name, score: score }]
+          bestPlayersTab : [...tab, {rang: '', name : name, score: score }]
       })
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value, currentPoints : 0, nbGoodAns : 0, disabled: false, disabledNext : true });
     if (event.target.value.length > 2) {
       this.setState({ 
         disabledPlay : false, 
@@ -189,6 +189,7 @@ class App extends Component {
             <Route exact path="/"><NameForm
               type="text"
               value={this.state.value}
+              bestPlayersTab = {this.state.bestPlayersTab}
               onChange={this.handleChange}
               onSubmit={this.handleSubmit}
               disabledPlay={this.state.disabledPlay}
