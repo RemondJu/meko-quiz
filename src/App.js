@@ -53,18 +53,19 @@ class App extends Component {
       disabled: false,
       disabledNext: true,
       disabledPlay : true,
-      value: 'Player',
+      value: 'Player', //Nom du joueur ou de l'équipe
+      currentPoints: 0, //Score dynamique du joueur
       messageResult: "Bravo !",
-      currentPoints: 0,   
-      nbGoodAns: 0,   
+      nbGoodAns: 0,   //Nombre de bonnes réponses au quiz
       buttonColor: "danger",
-      nbQuestions: quizOne3.length,
-
+      nbQuestions: quizOne3.length,//Nombre de questions total du quiz
+      bestPlayersTab : [] //Tableau de l'historique des joueurs et scores
     }
     this.clearDisable = this.clearDisable.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleAnswer = this.handleAnswer.bind(this);
     this.messageDyn = this.messageDyn.bind(this);
+    this.registerFinalScore = this.registerFinalScore.bind(this);
     this.clearNbQuestions = this.clearNbQuestions.bind(this);
 
   }
@@ -79,6 +80,15 @@ class App extends Component {
         messageResult: "Bof..."
       })
     }
+  }
+
+  registerFinalScore() {
+      const name = this.state.value;
+      const score = this.state.currentPoints;
+      const tab = [...this.state.bestPlayersTab];
+      this.setState({
+          bestPlayersTab : [...tab, {name : name, score: score }]
+      })
   }
 
   handleChange(event) {
@@ -143,8 +153,8 @@ class App extends Component {
               if (question.id + 1 > this.state.quizOne3.length) {
                 return (
 
-                  <Route path={pathquiz}><Quiz
-                    key={question.id}
+                  <Route path={pathquiz} key={question.id} ><Quiz
+                    
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
                     btnClick1={this.state.reponse1Click}
@@ -160,8 +170,7 @@ class App extends Component {
               } else {
                 return (
 
-                  <Route path={pathquiz}><Quiz
-                    key={question.id}
+                  <Route path={pathquiz} key={question.id} ><Quiz
                     disabled={this.state.disabled}
                     disabledNext={this.state.disabledNext}
                     btnClick1={this.state.reponse1Click}
@@ -191,6 +200,8 @@ class App extends Component {
             clearNbQuestions = {this.clearNbQuestions}
             nbQuestions = {this.state.nbQuestions}
             messageDyn = {this.messageDyn}
+            bestPlayersTab = {this.state.bestPlayersTab}
+            registerFinalScore = {this.registerFinalScore}
             messageResult = {this.state.messageResult}
             points={this.state.currentPoints}
             value={this.state.value}

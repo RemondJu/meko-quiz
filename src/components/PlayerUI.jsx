@@ -12,12 +12,11 @@ class PlayerUI extends Component {
     return (
       <div>
         <Navbar color="dark" className="UI-style">
-          <NavbarBrand href="/" className="text-white">
-            <Button outline color="primary">Home</Button> {' '}
+            <NavbarBrand href="/" className="text-white">
+                <Button outline color="primary">Home</Button> {' '}
             </NavbarBrand>
-            <h3><Badge color="light" lg>{this.props.value}</Badge></h3>
-          
-          <h4><Badge color="info">{this.props.points} points</Badge></h4>
+            <h3><Badge color="light" >{this.props.value}</Badge></h3>
+            <h4><Badge color="info">{this.props.points} points</Badge></h4>
         </Navbar>
       </div>
     );
