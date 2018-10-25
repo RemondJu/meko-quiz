@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 import './Resultat.css';
 
 class Resultat extends Component {
+    
     componentDidMount(){
         this.props.messageDyn()
     }
