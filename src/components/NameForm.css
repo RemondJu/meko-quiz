@@ -7,7 +7,6 @@
   text-align: center;
   color: #EFF0F0;
   font-size: 1.5em;
-
 }
 
 .input-style{
@@ -70,7 +69,7 @@ nav.navbar.nav-home {
   }
   .logo_quizz{
     width: 300px;
-    margin:150px 0 100px 0;
+    margin:100px 0 100px 0;
   }
 
   .button-style{

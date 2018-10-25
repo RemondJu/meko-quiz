@@ -19,7 +19,7 @@ class NameForm extends Component {
         if (tab.length !== 0) {
             this.setState({ modal: !this.state.modal });
         } else { 
-            alert("Aucun score n\'a été enregistré pour le moment.\nJouez au quiz !");
+            alert("Aucun score n'a été enregistré pour le moment.\nJouez au quiz !");
         }
 
     }
@@ -32,18 +32,15 @@ class NameForm extends Component {
                 <Button className='meilleursScores' color="secondary" onClick={this.toggle}>Meilleurs Scores</Button>
             </Navbar>
             <img className="logo_quizz" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/Projet%20quizz/pc/Logo_Meko_Quizz.png" alt="Logo_Quizz"/>
-            <h1 className="title-style">Choisis ton nom de Quizeur !</h1>
+            <h1 className="title-style">Bienvenue Quizeur ! Es-tu prêt à tester ta culture générale ? </h1>
             <form >
             <label>
-                <input className="input-style" type="text" value={this.props.value} onChange={this.props.onChange} />
+                <input className="input-style" type="text" placeholder='Saisis ton nom de joueur' value={this.props.value} onChange={this.props.onChange} />
             </label>
             <div>
-            <NavLink to="/quiz1" activeClassName="selected">
+            <NavLink to="/quiz0" activeClassName="selected">
                 <Button color={this.props.buttonColor} size="lg" type="submit" disabled={this.props.disabledPlay} >Jouez !</Button>
-                </NavLink>
-                {/* <NavLink to="/quiz1" activeClassName="selected">
-                <input className="button-style" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/Projet%20quizz/pc/btn_unpressed.png" disabled={this.props.disabledPlay} type="image" value="jouez !"/>
-                </NavLink> */}
+              </NavLink>
             </div>
             </form>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className = "modal-BestPlayers">

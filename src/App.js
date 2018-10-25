@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Resultat from './components/Resultat';
 import './App.css';
 import Quiz from './components/Quiz'
-// import Quiz2 from './components/Quiz2'
 import NameForm from './components/NameForm.jsx'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import AccueilAdmin from './components/AccueilAdmin';
@@ -10,42 +9,42 @@ import ModifyQuiz from './components/ModifyQuiz'
 import AddQuiz from './components/AddQuiz'
 import DeleteQuiz from './components/DeleteQuiz'
 
-const quizOne3 =  [
-    {
-      id: 1,
-      "name-quiz": 'Quiz 1',
-      "difficulty-quiz": 'beginner',
-      question: "What was Victoria Beckham's nickname when she was in the Spice Girls",
-      "reponse-1": "Posh",
-      "status-1": true,
-      "reponse-2": "Sporty",
-      "status-2": false,
-      "reponse-3": "Ginger",
-      "status-3": false,
-      "reponse-4": "Baby",
-      "status-4": false,
-    },
-    {
-      id: 2,
-      "name-quiz": 'Quiz 1',
-      "difficulty-quiz": 'beginner',
-      question: "What was JK Rowling's job before she wrote Harry Potter ?",
-      "reponse-1": "Lawyer",
-      "status-1": false,
-      "reponse-2": "Shop assistant",
-      "status-2": false,
-      "reponse-3": "English teacher",
-      "status-3": true,
-      "reponse-4": "Accountant",
-      "status-4": false,
-    }
-  ]
+// const quizOne3 =  [
+//     {
+//       id: 1,
+//       "name-quiz": 'Quiz 1',
+//       "difficulty-quiz": 'beginner',
+//       question: "What was Victoria Beckham's nickname when she was in the Spice Girls",
+//       "reponse-1": "Posh",
+//       "status-1": true,
+//       "reponse-2": "Sporty",
+//       "status-2": false,
+//       "reponse-3": "Ginger",
+//       "status-3": false,
+//       "reponse-4": "Baby",
+//       "status-4": false,
+//     },
+//     {
+//       id: 2,
+//       "name-quiz": 'Quiz 1',
+//       "difficulty-quiz": 'beginner',
+//       question: "What was JK Rowling's job before she wrote Harry Potter ?",
+//       "reponse-1": "Lawyer",
+//       "status-1": false,
+//       "reponse-2": "Shop assistant",
+//       "status-2": false,
+//       "reponse-3": "English teacher",
+//       "status-3": true,
+//       "reponse-4": "Accountant",
+//       "status-4": false,
+//     }
+//   ]
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizOne3: quizOne3,
+      quizOne3: [],
       reponse1Click: false,
       reponse2Click: false,
       reponse3Click: false,
@@ -53,12 +52,12 @@ class App extends Component {
       disabled: false,
       disabledNext: true,
       disabledPlay : true,
-      value: 'Player', //Nom du joueur ou de l'équipe
+      value: '', //Nom du joueur ou de l'équipe
       currentPoints: 0, //Score dynamique du joueur
       messageResult: "Bravo !",
       nbGoodAns: 0,   //Nombre de bonnes réponses au quiz
       buttonColor: "danger",
-      nbQuestions: quizOne3.length,//Nombre de questions total du quiz
+      nbQuestions: 0,//Nombre de questions total du quiz
       bestPlayersTab : [] //Tableau de l'historique des joueurs et scores
     }
     this.clearDisable = this.clearDisable.bind(this);
@@ -70,7 +69,18 @@ class App extends Component {
 
   }
 
-  messageDyn(){
+  componentDidMount() {
+    fetch("http://92.175.11.66:3000/teamburgers/api/questions")
+      .then(response => response.json())
+      .then(quizz => {
+        this.setState({
+          quizOne3: quizz,
+          nbQuestions: quizz.length
+        });
+      });
+  }
+
+  messageDyn() {
     if (this.state.nbGoodAns >= this.state.nbQuestions / 2) {
       this.setState({
         messageResult: "Bravo !"
@@ -94,14 +104,16 @@ class App extends Component {
   handleChange(event) {
     this.setState({ value: event.target.value, currentPoints : 0, nbGoodAns : 0, disabled: false, disabledNext : true });
     if (event.target.value.length > 2) {
-      this.setState({ 
-        disabledPlay : false, 
-        buttonColor: "success"});
+      this.setState({
+        disabledPlay: false,
+        buttonColor: "success"
+      });
     }
     else {
-      this.setState({ 
-        disabledPlay : true, 
-        buttonColor: "danger"});
+      this.setState({
+        disabledPlay: true,
+        buttonColor: "danger"
+      });
     }
   }
 
@@ -115,7 +127,7 @@ class App extends Component {
       })
     } else {
       this.setState({
-       [reponse]: true,
+        [reponse]: true,
         disabled: true,
         disabledNext: false,
       })
@@ -145,10 +157,9 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-
-            {this.state.quizOne3.map(question => {
-              let pathquiz = `/quiz${question.id}`
-              let pathQuiz2 = `/quiz${question.id + 1}`
+            {this.state.quizOne3.map((question, index) => {
+              let pathquiz = `/quiz${index}`
+              let pathQuiz2 = `/quiz${index + 1}`
               let returnHome = `/resultat`
               if (question.id + 1 > this.state.quizOne3.length) {
                 return (
@@ -210,9 +221,14 @@ class App extends Component {
 
 
             <Route path="/admin"><AccueilAdmin /></Route>
+
             <Route path="/modify"><ModifyQuiz /></Route>
+
             <Route path="/add"><AddQuiz /></Route>
-            <Route path="/delete"><DeleteQuiz /></Route>
+
+            <Route path="/delete"><DeleteQuiz 
+              data={this.state.quizOne3} /></Route>
+
           </Switch>
         </BrowserRouter>
       </div>
