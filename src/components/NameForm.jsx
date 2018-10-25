@@ -19,7 +19,7 @@ class NameForm extends Component {
         if (tab.length !== 0) {
             this.setState({ modal: !this.state.modal });
         } else { 
-            alert("Aucun score n\'a été enregistré pour le moment.\nJouez au quiz !");
+            alert("Aucun score n'a été enregistré pour le moment.\nJouez au quiz !");
         }
 
     }
