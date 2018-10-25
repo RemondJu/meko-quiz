@@ -63,7 +63,7 @@ class Quiz extends Component {
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
                             reponse={this.props.q.reponse4}
-                            status={this.props.q.status4}
+                            status={this.props.q['status-4']}
                             btnClick={this.props.btnClick4}
                             reponseClick="reponse4Click"
                             lettre="D :"

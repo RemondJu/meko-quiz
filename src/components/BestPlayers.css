@@ -1,0 +1,20 @@
+table.table.table-scores {
+    background-color: transparent !important ;
+    text-align: center;
+    margin-top: 25px;
+}
+.bestPlayersTab {
+    text-align: center;
+    border-radius: 0px;
+    padding : 20px
+}
+
+table.table-scores tbody tr {
+    border-top : 1px solid lightgray ;
+    border-bottom : 1px solid lightgray ;
+
+}
+
+table.table-scores thead {
+    background-color: hsl(0, 0%, 91%);
+}

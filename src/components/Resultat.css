@@ -107,3 +107,15 @@ body{
     font-size: 0.7em;
     margin-top: -30px;    
 }
+
+/* ///////////////////////////////////////////// */
+/*                Modal Best scores              */
+/* ///////////////////////////////////////////// */
+
+.modal-BestPlayers .modal-content {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+button.btnResult {
+  margin-top: 70px;
+}
+

@@ -1,37 +1,3 @@
-@media (max-width:749px){
-  body{
-    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539332368/Projet%20quizz/mobile/page_accueil.png");
-    background-repeat: no-repeat;
-  }
-
-  .logo_quizz{
-    width: 250px;
-    margin:150px 0 150px 0;
-  }
-
-  .button-style{
-    width: 150px;
-    margin: 150px 0 0 0;
-  }
-
-}
-
-@media (min-width:750px){
-  body{
-    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539780745/Projet%20quizz/pc/fond_app_pc.png");
-    background-repeat: no-repeat;
-  }
-  .logo_quizz{
-    width: 300px;
-    margin:150px 0 100px 0;
-  }
-
-  .button-style{
-    width: 150px;
-    margin: 50px 0 0 0;
-  }
-}
-
 .form-style{
   width: 100%;
   margin-top: 2em;
@@ -41,7 +7,6 @@
   text-align: center;
   color: #EFF0F0;
   font-size: 1.5em;
-
 }
 
 .input-style{
@@ -68,4 +33,47 @@
 
 label{
   width: 90%
+}
+
+nav.navbar.nav-home {
+    display: block;
+    justify-content: center
+}
+
+.modal-BestPlayers .modal-content {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+@media (max-width:749px){
+  body{
+    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539332368/Projet%20quizz/mobile/page_accueil.png");
+    background-repeat: no-repeat;
+  }
+
+  .logo_quizz{
+    width: 250px;
+    margin:150px 0 150px 0;
+  }
+
+  .button-style{
+    width: 150px;
+    margin: 150px 0 0 0;
+  }
+
+}
+
+@media (min-width:750px){
+  body{
+    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539780745/Projet%20quizz/pc/fond_app_pc.png");
+    background-repeat: no-repeat;
+  }
+  .logo_quizz{
+    width: 300px;
+    margin:100px 0 100px 0;
+  }
+
+  .button-style{
+    width: 150px;
+    margin: 50px 0 0 0;
+  }
 }
