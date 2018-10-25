@@ -42,7 +42,7 @@ class Resultat extends Component {
                         <Col>
                             <div className="banniere text-center">
                                 <div className="div_img">
-                                    <img className="img-fluid fond" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Banniere_Score.png/" alt="Fond-page-score" />
+                                    <img className="img-fluid fond" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%20quizz/Banniere_Score.png" alt="Fond-page-score" />
                                 </div>
                                 <div>
                                     <Col>
@@ -51,7 +51,7 @@ class Resultat extends Component {
                                             value={this.props.value}
                                             points={this.props.points} />
                                             <div>
-                                                <img className="trophee" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Trophee.png" alt="Coupe-Score" />
+                                                <img className="trophee" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%20quizz/Trophee.png" alt="Coupe-Score" />
                                             </div>
                                             <Felicitation 
                                             messageResult = {this.props.messageResult}
