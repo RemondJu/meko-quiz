@@ -25,8 +25,11 @@ class AddQuiz extends Component {
     }
 
     handleChange(event){
-        if((!this.state['status-1'])&&(!this.state['status-2'])&&(!this.state['status-3'])&&(!this.state['status-4']))
         this.setState({
+            'status-1': false,
+            'status-2': false,
+            'status-3': false,
+            'status-4': false,
             [event.target.id]: true
         })
     }
@@ -151,7 +154,6 @@ class AddQuiz extends Component {
                                                         name="status"
                                                         id="status-3"
                                                         onClick={this.handleChange}
-
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
