@@ -10,7 +10,6 @@ import Reponse from './Reponse';
 class Quiz extends Component {
     state = {  }
     render() { 
-        console.log(this.props.q)
         return (
             <div className='Quiz'>
                 <PlayerUI value={this.props.value}
@@ -28,7 +27,7 @@ class Quiz extends Component {
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
-                            reponse={this.props.q['reponse-1']}
+                            reponse={this.props.q['answer-1']}
                             status={this.props.q['status-1']}
                             btnClick={this.props.btnClick1}
                             reponseClick='reponse1Click'
@@ -39,7 +38,7 @@ class Quiz extends Component {
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
-                            reponse={this.props.q['reponse-2']}
+                            reponse={this.props.q['answer-2']}
                             status={this.props.q['status-2']}
                             btnClick={this.props.btnClick2}
                             reponseClick='reponse2Click'
@@ -52,7 +51,7 @@ class Quiz extends Component {
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
-                            reponse={this.props.q['reponse-3']}
+                            reponse={this.props.q['answer-3']}
                             status={this.props.q['status-3']}
                             btnClick={this.props.btnClick3}
                             reponseClick='reponse3Click'
@@ -63,7 +62,7 @@ class Quiz extends Component {
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
-                            reponse={this.props.q['reponse-4']}
+                            reponse={this.props.q['answer-4']}
                             status={this.props.q['status-4']}
                             btnClick={this.props.btnClick4}
                             reponseClick='reponse4Click'

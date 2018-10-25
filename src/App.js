@@ -158,66 +158,72 @@ class App extends Component {
         <BrowserRouter>
           <Switch>
             {this.state.quizOne3.map((question, index) => {
-              let pathquiz = `/quiz${index}`
-              let pathQuiz2 = `/quiz${index + 1}`
-              let returnHome = `/resultat`
-              if (question.id + 1 > this.state.quizOne3.length) {
+              let pathquiz = `/quiz${index}`;
+              let pathQuiz2 = `/quiz${index + 1}`;
+              let returnHome = `/resultat`;
+              if (index + 1 >= this.state.quizOne3.length) {
                 return (
 
-                  <Route path={pathquiz} key={question.id} ><Quiz
-                    
-                    disabled={this.state.disabled}
-                    disabledNext={this.state.disabledNext}
-                    btnClick1={this.state.reponse1Click}
-                    btnClick2={this.state.reponse2Click}
-                    btnClick4={this.state.reponse4Click}
-                    btnClick3={this.state.reponse3Click}
-                    clearDisable={this.clearDisable}
-                    handleAns={this.handleAnswer}
-                    q={question}
-                    pathquiz={returnHome}
-                    value={this.state.value}
-                    points={this.state.currentPoints} /></Route>)
+                  <Route path={pathquiz} key={question.id} >
+                    <Quiz
+                      disabled={this.state.disabled}
+                      disabledNext={this.state.disabledNext}
+                      btnClick1={this.state.reponse1Click}
+                      btnClick2={this.state.reponse2Click}
+                      btnClick4={this.state.reponse4Click}
+                      btnClick3={this.state.reponse3Click}
+                      clearDisable={this.clearDisable}
+                      handleAns={this.handleAnswer}
+                      q={question}
+                      pathquiz={returnHome}
+                      value={this.state.value}
+                      points={this.state.currentPoints} />
+                  </Route>)
               } else {
                 return (
 
-                  <Route path={pathquiz} key={question.id} ><Quiz
-                    disabled={this.state.disabled}
-                    disabledNext={this.state.disabledNext}
-                    btnClick1={this.state.reponse1Click}
-                    btnClick2={this.state.reponse2Click}
-                    btnClick4={this.state.reponse4Click}
-                    btnClick3={this.state.reponse3Click}
-                    clearDisable={this.clearDisable}
-                    handleAns={this.handleAnswer}
-                    q={question}
-                    pathquiz={pathQuiz2}
-                    points={this.state.currentPoints}
-                    value={this.state.value} /></Route>)
+                  <Route path={pathquiz} key={question.id} >
+                    <Quiz
+                      disabled={this.state.disabled}
+                      disabledNext={this.state.disabledNext}
+                      btnClick1={this.state.reponse1Click}
+                      btnClick2={this.state.reponse2Click}
+                      btnClick4={this.state.reponse4Click}
+                      btnClick3={this.state.reponse3Click}
+                      clearDisable={this.clearDisable}
+                      handleAns={this.handleAnswer}
+                      q={question}
+                      pathquiz={pathQuiz2}
+                      points={this.state.currentPoints}
+                      value={this.state.value} />
+                  </Route>)
               }
             })}
 
-            <Route exact path="/"><NameForm
-              type="text"
-              value={this.state.value}
-              bestPlayersTab = {this.state.bestPlayersTab}
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              disabledPlay={this.state.disabledPlay}
-              buttonColor={this.state.buttonColor}/>
-              </Route>
+            <Route exact path="/">
+              <NameForm
+                type="text"
+                value={this.state.value}
+                bestPlayersTab = {this.state.bestPlayersTab}
+                onChange={this.handleChange}
+                onSubmit={this.handleSubmit}
+                disabledPlay={this.state.disabledPlay}
+                buttonColor={this.state.buttonColor}/>
+            </Route>
 
 
-            <Route path="/resultat"><Resultat 
-            clearNbQuestions = {this.clearNbQuestions}
-            nbQuestions = {this.state.nbQuestions}
-            messageDyn = {this.messageDyn}
-            bestPlayersTab = {this.state.bestPlayersTab}
-            registerFinalScore = {this.registerFinalScore}
-            messageResult = {this.state.messageResult}
-            points={this.state.currentPoints}
-            value={this.state.value}
-            nbGoodAns={this.state.nbGoodAns}/></Route>
+            <Route path="/resultat">
+              <Resultat 
+                clearNbQuestions = {this.clearNbQuestions}
+                nbQuestions = {this.state.nbQuestions}
+                messageDyn = {this.messageDyn}
+                bestPlayersTab = {this.state.bestPlayersTab}
+                registerFinalScore = {this.registerFinalScore}
+                messageResult = {this.state.messageResult}
+                points={this.state.currentPoints}
+                value={this.state.value}
+                nbGoodAns={this.state.nbGoodAns}/>
+            </Route>
 
 
             <Route path="/admin"><AccueilAdmin /></Route>

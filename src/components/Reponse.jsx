@@ -21,7 +21,6 @@ class Reponse extends Component {
     }
 
     render() { 
-        {console.log(this.props)}
         return ( 
             <Button block 
             disabled={this.props.disabled}
