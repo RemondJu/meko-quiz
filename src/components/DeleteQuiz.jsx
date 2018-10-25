@@ -10,7 +10,7 @@ class DeleteQuiz extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quizList: this.props.data,
+      quizList: [],
     }
   }
 
@@ -26,6 +26,11 @@ class DeleteQuiz extends Component {
       window.location.reload()}
       )
   }
+  componentDidMount(){
+    this.setState({
+      quizList: this.props.data
+    })
+  }
 
 
   render() {
@@ -40,18 +45,18 @@ class DeleteQuiz extends Component {
                 <th>#</th>
                 <th>Nom du quiz</th>
                 <th>Difficulté</th>
-                <th>Nombre de questions</th>
+                <th>Question</th>
                 <th>Supprimer</th>
               </tr>
             </thead>
             <tbody>
-              {this.props.data.map((quiz, index) => {
+              {this.props.data.map((quiz) => {
                 return (
                   <tr>
                     <th scope="row">{quiz.id}</th>
-                    <td>{quiz.name}</td>
-                    <td>{quiz.difficulty}</td>
-                    <td>{this.props.data.length}</td>
+                    <td>{quiz['name-quiz']}</td>
+                    <td>{quiz['difficulty-quiz']}</td>
+                    <td>{quiz.question}</td>
                     <td><Button onClick={() => this.getDeleteQuizz(quiz.id)}>X</Button></td>
                   </tr>
                 )
