@@ -29,7 +29,7 @@ class NameForm extends Component {
       <div className="form-style">
         <div>
             <Navbar className = "nav-home">
-                <Button className='meilleursScores' color="secondary" onClick={this.toggle}>Meilleurs Scores</Button>
+                <Button className='meilleursScores' color="warning" onClick={this.toggle}>Meilleurs Scores</Button>
             </Navbar>
             <img className="logo_quizz" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/Projet%20quizz/pc/Logo_Meko_Quizz.png" alt="Logo_Quizz"/>
             <h1 className="title-style">Choisis ton nom de Quizeur !</h1>

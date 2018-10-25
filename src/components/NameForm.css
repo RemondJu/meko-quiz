@@ -32,6 +32,10 @@
   outline: none;
 }
 
+Button.meilleursScores{
+  color: white;
+}
+
 label{
   width: 90%
 }
@@ -47,7 +51,7 @@ nav.navbar.nav-home {
 
 @media (max-width:749px){
   body{
-    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539332368/Projet%20quizz/mobile/page_accueil.png");
+    background-image: url("https://drive.google.com/uc?id=1Q8SW_bTTXJXK5sKImeddmN98T6jcpvr8");
     background-repeat: no-repeat;
   }
 
@@ -65,7 +69,7 @@ nav.navbar.nav-home {
 
 @media (min-width:750px){
   body{
-    background-image: url("https://res.cloudinary.com/dsql7dxni/image/upload/v1539780745/Projet%20quizz/pc/fond_app_pc.png");
+    background-image: url("https://drive.google.com/uc?id=1EeFUFqeE67AzgjMKWgjAep-Y6oGtzawF");
     background-repeat: no-repeat;
   }
   .logo_quizz{

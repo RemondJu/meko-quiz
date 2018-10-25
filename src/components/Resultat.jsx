@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Felicitation from './Felicitation';
 import Score from './Score';
 import { Navbar, Button, Modal, ModalBody, Container, Row, Col } from 'reactstrap';
@@ -11,12 +11,12 @@ class Resultat extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        modal: false
+            modal: false
         }
         this.toggle = this.toggle.bind(this);
     }
-    
-    componentDidMount(){
+
+    componentDidMount() {
         this.props.messageDyn();
         this.props.registerFinalScore();
     }
@@ -31,32 +31,34 @@ class Resultat extends Component {
         return (
             <div>
                 <Container>
-                    
+
                     <Navbar>
-                        <NavLink exact to="/" activeClassName="selected">
-                            <Button className='btnResult' color="secondary" onClick={this.props.clearNbQuestions}>Accueil</Button>
+                        <NavLink exact to="/" activeClassName="selected" className="btnAcc_and_Res">
+                            <Button className='btnResult' color="primary" onClick={this.props.clearNbQuestions}>Accueil</Button>
                         </NavLink>
-                        <Button className='btnResult' color="secondary" onClick={this.toggle}>Meilleurs Scores</Button>
-                    </Navbar> 
+                        <Button className='btnResult' color="warning" onClick={this.toggle}>Meilleurs Scores</Button>
+                        
+                        
+                    </Navbar>
                     <Row>
                         <Col>
                             <div className="banniere text-center">
                                 <div className="div_img">
-                                    <img className="img-fluid fond" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Banniere_Score.png/" alt="Fond-page-score" />
+                                    <img className="img-fluid fond" src="https://drive.google.com/uc?id=1BNeIfohjozg9_EOguK6uwgtM0dNjkAD3" alt="Fond-page-score" />
                                 </div>
                                 <div>
                                     <Col>
                                         <div className="scoreEquipe">
-                                            <Score 
-                                            value={this.props.value}
-                                            points={this.props.points} />
+                                            <Score
+                                                value={this.props.value}
+                                                points={this.props.points} />
                                             <div>
-                                                <img className="trophee" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539267181/Projet%202%20Quizz/Trophee.png" alt="Coupe-Score" />
+                                                <img className="trophee" src="https://drive.google.com/uc?id=1NTvkWqcjO1cuNnUciNB_KuPYcxmcnZDI" alt="Coupe-Score" />
                                             </div>
-                                            <Felicitation 
-                                            messageResult = {this.props.messageResult}
-                                            nbQuestions = {this.props.nbQuestions}
-                                            nbGoodAns={this.props.nbGoodAns}/>
+                                            <Felicitation
+                                                messageResult={this.props.messageResult}
+                                                nbQuestions={this.props.nbQuestions}
+                                                nbGoodAns={this.props.nbGoodAns} />
 
                                         </div>
                                     </Col>
@@ -65,10 +67,10 @@ class Resultat extends Component {
                         </Col>
                     </Row>
                 </Container >
-                <Modal isOpen={this.state.modal} toggle={this.toggle} className = "modal-BestPlayers">
+                <Modal isOpen={this.state.modal} toggle={this.toggle} className="modal-BestPlayers">
                     <ModalBody>
                         <button className="close" onClick={this.toggle}>&times;</button>
-                        <BestPlayers bestPlayersTab = {this.props.bestPlayersTab} />
+                        <BestPlayers bestPlayersTab={this.props.bestPlayersTab} />
                     </ModalBody>
                 </Modal>
             </div>
