@@ -17,7 +17,7 @@ class PlayerUI extends Component {
             <h4><Badge color="info" >{this.props.points} points</Badge></h4>
         </Navbar>
       </div>
-    );
+    )
   }
 }
 

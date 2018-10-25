@@ -44,7 +44,11 @@ class Resultat extends Component {
                         <Col>
                             <div className="banniere text-center">
                                 <div className="div_img">
+
                                     <img className="img-fluid fond" src="https://drive.google.com/uc?id=1BNeIfohjozg9_EOguK6uwgtM0dNjkAD3" alt="Fond-page-score" />
+
+                                   
+
                                 </div>
                                 <div>
                                     <Col>
@@ -53,7 +57,7 @@ class Resultat extends Component {
                                                 value={this.props.value}
                                                 points={this.props.points} />
                                             <div>
-                                                <img className="trophee" src="https://drive.google.com/uc?id=1NTvkWqcjO1cuNnUciNB_KuPYcxmcnZDI" alt="Coupe-Score" />
+                                                <img className="trophee" src="https://drive.google.com/uc?id=1NTvkWqcjO1cuNnUciNB_KuPYcxmcnZDI" alt="Coupe-Score" />                                               
                                             </div>
                                             <Felicitation
                                                 messageResult={this.props.messageResult}
