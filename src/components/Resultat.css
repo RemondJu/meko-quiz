@@ -15,6 +15,9 @@
 body{
     background: linear-gradient(rgb(0, 51, 94),rgb(73, 124, 184));
     background-repeat: no-repeat;
+   
+}
+.Resultat{
     overflow: hidden;
 }
 

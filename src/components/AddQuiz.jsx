@@ -21,21 +21,23 @@ class AddQuiz extends Component {
         }
         this.onChange = this.onChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
-    handleClick(event){
+    handleChange(event){
         this.setState({
-            [event.target.name]: !this.state[event.target.name]
+            'status-1': false,
+            'status-2': false,
+            'status-3': false,
+            'status-4': false,
+            [event.target.id]: true
         })
-        console.log(this.state)
     }
 
     onChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
-        console.log(event.target.value)
     }
 
     submitForm(event) {
@@ -50,17 +52,29 @@ class AddQuiz extends Component {
         const url = "http://92.175.11.66:3000/teamburgers/api/questions";
         event.preventDefault();
         fetch(url, config)
-            .then(res => {console.log(res)
-                res.json()})
-            .then(res => {
-                if (res.error) {
-                    console.log(res.error);
+            .then(res => res.json())
+            .then(response => {
+                if (response.error) {
+                    console.log(response.error);
                 } else {
-                    console.log(`Quizz ajouté avec l'ID ${res}`)
+                    console.log(`Quizz ajouté avec l'ID ${response}`)
                 }
             })
+            .then(this.setState({
+                'name-quiz': '',
+                'difficulty-quiz': '',
+                question: '',
+                'answer-1': '',
+                'status-1': false,
+                'answer-2': '',
+                'status-2': false,
+                'answer-3': '',
+                'status-3': false,
+                'answer-4': '',
+                'status-4': false,
+            }))
             .catch(event => {
-                console.error(event);
+                console.log('event', event);
                 alert('ERREUR')
             })
     }
@@ -105,8 +119,9 @@ class AddQuiz extends Component {
                                             <FormGroup check>
                                                 <Label check>
                                                     <Input type="radio"
-                                                        name="status-1"
-                                                        onClick={this.handleClick}
+                                                        name="status"
+                                                        id="status-1"
+                                                        onClick={this.handleChange}
 
                                                     />{' '}Bonne reponse
                                                 </Label>
@@ -120,8 +135,9 @@ class AddQuiz extends Component {
                                             <FormGroup check>
                                                 <Label check>
                                                     <Input type="radio"
-                                                        name="status-2"
-                                                        onClick={this.handleClick}
+                                                        name="status"
+                                                        id="status-2"
+                                                        onClick={this.handleChange}
 
                                                     />{' '}Bonne reponse
                                                 </Label>
@@ -135,9 +151,9 @@ class AddQuiz extends Component {
                                             <FormGroup check>
                                                 <Label check>
                                                     <Input type="radio"
-                                                        name="status-3"
-                                                        onClick={this.handleClick}
-
+                                                        name="status"
+                                                        id="status-3"
+                                                        onClick={this.handleChange}
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
@@ -150,8 +166,9 @@ class AddQuiz extends Component {
                                             <FormGroup check>
                                                 <Label check>
                                                     <Input type="radio"
-                                                        name="status-4"
-                                                        onClick={this.handleClick}
+                                                        name="status"
+                                                        id="status-4"
+                                                        onClick={this.handleChange}
 
                                                     />{' '}Bonne reponse
                                                 </Label>

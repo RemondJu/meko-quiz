@@ -5,26 +5,39 @@ import Quiz from './components/Quiz'
 import NameForm from './components/NameForm.jsx'
 import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import AccueilAdmin from './components/AccueilAdmin';
-import ModifyQuiz from './components/ModifyQuiz';
-import AddQuiz from './components/AddQuiz';
-import DeleteQuiz from './components/DeleteQuiz';
-
+import ModifyQuiz from './components/ModifyQuiz'
+import AddQuiz from './components/AddQuiz'
+import DeleteQuiz from './components/DeleteQuiz'
 
 // const quizOne3 =  [
 //     {
 //       id: 1,
-//       name: 'Quiz 1',
-//       difficulty: 'beginner',
+//       "name-quiz": 'Quiz 1',
+//       "difficulty-quiz": 'beginner',
 //       question: "What was Victoria Beckham's nickname when she was in the Spice Girls",
-//       reponse1: "Posh",
-//       status1: true,
-//       reponse2: "Sporty",
-//       status2: false,
-//       reponse3: "Ginger",
-//       status3: false,
-//       reponse4: "Baby",
-//       status4: false,
+//       "reponse-1": "Posh",
+//       "status-1": true,
+//       "reponse-2": "Sporty",
+//       "status-2": false,
+//       "reponse-3": "Ginger",
+//       "status-3": false,
+//       "reponse-4": "Baby",
+//       "status-4": false,
 //     },
+//     {
+//       id: 2,
+//       "name-quiz": 'Quiz 1',
+//       "difficulty-quiz": 'beginner',
+//       question: "What was JK Rowling's job before she wrote Harry Potter ?",
+//       "reponse-1": "Lawyer",
+//       "status-1": false,
+//       "reponse-2": "Shop assistant",
+//       "status-2": false,
+//       "reponse-3": "English teacher",
+//       "status-3": true,
+//       "reponse-4": "Accountant",
+//       "status-4": false,
+//     }
 //   ]
 
 class App extends Component {
@@ -144,12 +157,10 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <Switch>
-
             {this.state.quizOne3.map((question, index) => {
               let pathquiz = `/quiz${index}`
               let pathQuiz2 = `/quiz${index + 1}`
               let returnHome = `/resultat`
-
               if (question.id + 1 > this.state.quizOne3.length) {
                 return (
 
