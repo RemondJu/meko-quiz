@@ -214,7 +214,10 @@ class App extends Component {
                 refreshFetch={this.refreshFetch}/>
             </Route>
 
-            <Route path="/add"><AddQuiz /></Route>
+            <Route path="/add">
+            <AddQuiz
+             refreshFetch={this.refreshFetch} />
+            </Route>
 
             <Route path="/delete">
               <DeleteQuiz 

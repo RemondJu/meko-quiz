@@ -57,7 +57,7 @@ class AddQuiz extends Component {
                 if (response.error) {
                     console.log(response.error);
                 } else {
-                    console.log(`Quizz ajouté avec l'ID ${response}`)
+                    alert(`Quizz ajouté avec l'ID ${response}`)
                 }
             })
             .then(this.setState({
@@ -73,6 +73,7 @@ class AddQuiz extends Component {
                 'answer-4': '',
                 'status-4': false,
             }))
+            .then(this.props.refreshFetch)
             .catch(event => {
                 console.log('event', event);
                 alert('ERREUR')
@@ -84,7 +85,7 @@ class AddQuiz extends Component {
         return (
             <div className="AddQuiz">
                 <Container className="pb-2">
-                    <h1 className="adminTitle">Ajouter un nouveau quiz :</h1>
+                    <h1 className="adminTitle">Ajouter une nouvelle question :</h1>
                     <NavLink to="/admin" activeClassName="selected"><Button color="primary" size="lg" block>Accueil Administrateur</Button ></NavLink>
                     <Form className="mt-5" onSubmit={this.submitForm}>
                         <div className="AddForm mb-4">
