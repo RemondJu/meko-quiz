@@ -71,7 +71,7 @@ class Quiz extends Component {
                         </Col>                    
                     </Row>                    
                 </Container> 
-                <Col sm='2' className='offset-9 mt-4'>
+                <Col className='mt-4'>
                     <NavLink to={this.props.pathquiz} activeClassName='selected'>
                         <Button disabled={this.props.disabledNext} 
                         onClick={this.props.clearDisable}color='secondary'>Next</Button>{' '}
