@@ -166,6 +166,7 @@ class App extends Component {
 
                   <Route path={pathquiz} key={question.id} >
                     <Quiz
+                     questionNumber = {index + 1}
                       disabled={this.state.disabled}
                       disabledNext={this.state.disabledNext}
                       btnClick1={this.state.reponse1Click}
@@ -184,6 +185,7 @@ class App extends Component {
 
                   <Route path={pathquiz} key={question.id} >
                     <Quiz
+                        questionNumber = {index + 1}
                       disabled={this.state.disabled}
                       disabledNext={this.state.disabledNext}
                       btnClick1={this.state.reponse1Click}

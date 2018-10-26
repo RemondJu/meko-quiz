@@ -18,7 +18,9 @@ class Quiz extends Component {
                     <Row>
                         <Col className='text-center pb-5'>
                             <Question 
-                            quizOne={this.props.q}/>
+                            quizOne={this.props.q}
+                            questionNumber = {this.props.questionNumber}
+                            />
                         </Col>
                     </Row>   
                     <hr/>        
