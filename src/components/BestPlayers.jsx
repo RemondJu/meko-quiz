@@ -1,5 +1,9 @@
 import React from 'react';
 import {Table } from 'reactstrap';
+import tropheeOr from "../images/tropheeOr.png";
+import tropheeArgent from "../images/tropheeArgent.png";
+import tropheeBronze from "../images/tropheeBronze.png";
+
 import './BestPlayers.css';
 
 const BestPlayers = (props) => {
@@ -25,23 +29,31 @@ const BestPlayers = (props) => {
                 <Table responsive borderless className = 'table-scores' >
                     <thead >
                         <tr>
-                            <th>#</th>
+                            <th></th>
                             <th>NOM</th>
                         <th>SCORE</th>                                                                                              
                         </tr>
                     </thead>
                     <tbody>
-                        { sortedTab.map( (player, index) => {
-                            while(player.rank <= 3) {
+                        { sortedTab.filter( player => player.rank <= 3).map( (player, index) => {
+                                let trophy = '';
+                                if (player.rank === 1) {
+                                    trophy = tropheeOr;
+                                } else if(player.rank === 2) {
+                                    trophy =tropheeArgent;
+                                } else if(player.rank === 3) {
+                                    trophy =tropheeBronze;
+                                };
                                 return (
                                     <tr key={index}>
-                                        <td>{player.rank}</td>
+                                        <td>
+                                            <img className='tabTrophy' alt={trophy} src={trophy} />
+                                        </td>
                                         <td>{player.name}</td>
                                         <td>{player.score}</td>
                                     </tr>
                                 )
-                            }
-                        }) }
+                        } ) }
                     </tbody>
                 </Table>
                 
