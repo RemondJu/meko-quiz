@@ -6,20 +6,7 @@ class ModifyQuiz extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            quizList: [],
-            post: {
-                'name-quiz': '',
-                'difficulty-quiz': '',
-                question: '',
-                'answer-1': '',
-                'status-1': false,
-                'answer-2': '',
-                'status-2': false,
-                'answer-3': '',
-                'status-3': false,
-                'answer-4': '',
-                'status-4': false,
-            },
+            id: 0,
             'name-quiz': '',
             'difficulty-quiz': '',
             question: '',
@@ -31,37 +18,21 @@ class ModifyQuiz extends Component {
             'status-3': false,
             'answer-4': '',
             'status-4': false,
-            tempID: 0
          }
          this.fillForm = this.fillForm.bind(this);
          this.submitForm = this.submitForm.bind(this);
          this.onChange = this.onChange.bind(this);
-         this.setStateTemp1 = this.setStateTemp1.bind(this);
-         this.setStateTemp2 = this.setStateTemp2.bind(this);
     }
 
-componentDidMount(){
-    fetch("http://92.175.11.66:3000/teamburgers/api/questions")
-        .then(res => res.json())
-        .then(data => {
-            this.setState({
-                quizList: data,
-            })
-        })
-}
-
 submitForm(event) {
-      
-    
     const config = {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify(this.state.post),
+        body: JSON.stringify(this.state),
     };
-
-    const url = "http://92.175.11.66:3000/teamburgers/api/questions/" + this.state.tempID;
+    const url = "http://92.175.11.66:3000/teamburgers/api/questions/" + this.state.id;
     event.preventDefault();
     fetch(url, config)
         .then(res => res.text())
@@ -86,17 +57,19 @@ submitForm(event) {
             'answer-4': '',
             'status-4': false,
         }))
-        .then()
+        .then(this.props.refreshFetch)
         .catch(event => {
             console.error(event)
             console.log('Ca marche po...');
         })
 }
+
 fillForm(event){
     fetch("http://92.175.11.66:3000/teamburgers/api/questions/"+event.target.id)
         .then(res => res.json())
         .then(data => {
             this.setState({
+                id: data.id,
                 'name-quiz': data['name-quiz'],
                 'difficulty-quiz': data['difficulty-quiz'],
                 question: data.question,
@@ -108,11 +81,11 @@ fillForm(event){
                 'status-3': data['status-3'],
                 'answer-4': data['answer-4'],
                 'status-4': data['status-4'],
-                tempID: data.id,
                 })
         })
 }
-setStateTemp1(event){
+
+onChange(event){
     if(event.target.name === 'status'){
         this.setState({
             ['status-1']: false,
@@ -126,28 +99,6 @@ setStateTemp1(event){
             [event.target.name]: event.target.value
         })
     }
-}
-setStateTemp2(newPost){
-    this.setState({
-        post: newPost
-    })
-}
-onChange(event){
-    this.setStateTemp1(event);
-    const newPost = {
-        'name-quiz': this.state['name-quiz'],
-        'difficulty-quiz': this.state['difficulty-quiz'],
-        question: this.state.question,
-        'answer-1': this.state['answer-1'],
-        'status-1': this.state['status-1'],
-        'answer-2': this.state['answer-2'],
-        'status-2': this.state['status-2'],
-        'answer-3': this.state['answer-3'],
-        'status-3': this.state['status-3'],
-        'answer-4': this.state['answer-4'],
-        'status-4': this.state['status-4'],
-    };
-    this.setStateTemp2(newPost);
 }
 
 
@@ -268,9 +219,9 @@ render() {
                         </tr>
                         </thead>
                         <tbody>
-                        {this.state.quizList.map((quiz, index) => {
+                        {this.props.quizList.map((quiz, index) => {
                             return (
-                                <tr>
+                                <tr key={quiz.id}>
                                     <th scope="row">{index}</th>
                                     <td>{quiz['name-quiz']}</td>
                                     <td>{quiz.question}</td>
