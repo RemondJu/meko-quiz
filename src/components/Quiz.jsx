@@ -18,7 +18,9 @@ class Quiz extends Component {
                     <Row>
                         <Col className='text-center pb-5'>
                             <Question 
-                            quizOne={this.props.q}/>
+                            quizOne={this.props.q}
+                            questionNumber = {this.props.questionNumber}
+                            />
                         </Col>
                     </Row>   
                     <hr/>        
@@ -71,7 +73,7 @@ class Quiz extends Component {
                         </Col>                    
                     </Row>                    
                 </Container> 
-                <Col sm='2' className='offset-9 mt-4'>
+                <Col className='mt-4'>
                     <NavLink to={this.props.pathquiz} activeClassName='selected'>
                         <Button disabled={this.props.disabledNext} 
                         onClick={this.props.clearDisable}color='secondary'>Next</Button>{' '}
