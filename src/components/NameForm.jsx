@@ -33,7 +33,8 @@ class NameForm extends Component {
                 <Button className='meilleursScores' color="warning" onClick={this.toggle}>Meilleurs Scores</Button>
             </Navbar>
             <img className="logo_quizz" src={logoMekoQuizz} alt="Logo_Quizz"/>
-            <h1 className="title-style">Bienvenue Quizeur ! Es-tu prêt à tester ta culture générale ? </h1>
+            <h1 className="title-style">Bienvenue Quizeur !</h1>
+            <h2 className="title-style">Es-tu prêt à tester ta culture générale ?</h2>
             <form >
             <label>
                 <input className="input-style" type="text" placeholder='Saisis ton nom de joueur' value={this.props.value} onChange={this.props.onChange} />
