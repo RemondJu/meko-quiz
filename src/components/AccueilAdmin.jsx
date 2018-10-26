@@ -27,6 +27,7 @@ class AccueilAdmin extends Component {
                 </Col>
             </Row>
         </Container>
+        
      );
     }
 }
