@@ -3,15 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { Button, Container, Table } from 'reactstrap';
 import './AdminForm.css'
 
-// const quizList = [{ name: "Quiz1", difficulty: "Débutant" }, { name: "Quiz2", difficulty: "Confirmé" }, { name: "Quiz3", difficulty: "Expert" }]
-
-
 class DeleteQuiz extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      quizList: [],
-    }
+    this.state = {  }
   }
 
   getDeleteQuizz(item) {
@@ -22,17 +17,10 @@ class DeleteQuiz extends Component {
     }
     fetch(url, config)
       .then(response => response.text())
-      .then(response => { response.error ? alert(response.error) : alert(`le quiz n°${item} à bien été supprimé`)
-      window.location.reload()}
-      )
+      .then(response => { response.error ? alert(response.error) : alert(`le quiz n°${item} à bien été supprimé`)})
+      .then(this.props.refreshFetch)
   }
-  componentDidMount(){
-    this.setState({
-      quizList: this.props.data
-    })
-  }
-
-
+  
   render() {
     return (
       <div className="DeleteQuiz">
