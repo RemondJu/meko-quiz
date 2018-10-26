@@ -18,13 +18,13 @@ class AccueilAdmin extends Component {
             </Col>
             <Row className="mt-5  pb-5">
                 <Col>
-                    <NavLink to="/add" activeClassName="selected"><Button color="primary" size="lg" block>Ajouter un quiz</Button ></NavLink>
+                    <NavLink to="/add" activeClassName="selected"><Button color="primary" size="lg" block>Ajouter une question</Button ></NavLink>
                 </Col>
                 <Col>
-                    <NavLink to="/modify" activeClassName="selected"><Button color="primary" size="lg" block>Modifier un quiz</Button ></NavLink>
+                    <NavLink to="/modify" activeClassName="selected"><Button color="primary" size="lg" block>Modifier une question</Button ></NavLink>
                 </Col>
                 <Col>
-                    <NavLink to="/delete" activeClassName="selected"><Button color="primary" size="lg" block>Supprimer un quiz</Button ></NavLink>
+                    <NavLink to="/delete" activeClassName="selected"><Button color="primary" size="lg" block>Supprimer une question</Button ></NavLink>
                 </Col>
             </Row>
         </Container>

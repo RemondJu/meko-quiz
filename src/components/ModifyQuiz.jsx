@@ -88,10 +88,10 @@ fillForm(event){
 onChange(event){
     if(event.target.name === 'status'){
         this.setState({
-            ['status-1']: false,
-            ['status-2']: false,
-            ['status-3']: false,
-            ['status-4']: false,
+            'status-1': false,
+            'status-2': false,
+            'status-3': false,
+            'status-4': false,
             [event.target.id]: true
         })
     }else {
@@ -106,7 +106,7 @@ render() {
     return ( 
         <div className="ModifyQuiz">
             <Container>
-                <h1 className="adminTitle">Modification d'un quiz :</h1>
+                <h1 className="adminTitle">Modification d'une question :</h1>
                 <NavLink to="/admin" activeClassName="selected"><Button className="mb-4" color="primary" size="lg" block>Accueil Administrateur</Button ></NavLink>
                 <div className="AddQuiz">
                 <Container className="pb-2">
