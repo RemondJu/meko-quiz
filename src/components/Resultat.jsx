@@ -6,6 +6,8 @@ import { Navbar, Button, Modal, ModalBody, Container, Row, Col } from 'reactstra
 
 import './Resultat.css';
 import BestPlayers from './BestPlayers';
+import banniereScore from "../images/banniereScore.png";
+import trophee from "../images/trophee.png";
 
 class Resultat extends Component {
     constructor(props) {
@@ -45,7 +47,7 @@ class Resultat extends Component {
                             <div className="banniere text-center">
                                 <div className="div_img">
 
-                                    <img className="img-fluid fond" src="https://drive.google.com/uc?id=1BNeIfohjozg9_EOguK6uwgtM0dNjkAD3" alt="Fond-page-score" />
+                                    <img className="img-fluid fond" src={banniereScore} alt="Fond-page-score" />
 
                                    
 
@@ -57,7 +59,7 @@ class Resultat extends Component {
                                                 value={this.props.value}
                                                 points={this.props.points} />
                                             <div>
-                                                <img className="trophee" src="https://drive.google.com/uc?id=1NTvkWqcjO1cuNnUciNB_KuPYcxmcnZDI" alt="Coupe-Score" />                                               
+                                                <img className="trophee" src={trophee} alt="Coupe-Score" />                                               
                                             </div>
                                             <Felicitation
                                                 messageResult={this.props.messageResult}

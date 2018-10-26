@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, Navbar, Modal, ModalBody } from 'reactstrap';
 import BestPlayers from './BestPlayers';
+import logoMekoQuizz from "../images/logoMekoQuizz.png"
 import './NameForm.css';
 import './Resultat.css';
 
@@ -31,7 +32,7 @@ class NameForm extends Component {
             <Navbar className = "nav-home">
                 <Button className='meilleursScores' color="warning" onClick={this.toggle}>Meilleurs Scores</Button>
             </Navbar>
-            <img className="logo_quizz" src="https://res.cloudinary.com/dsql7dxni/image/upload/v1539780744/Projet%20quizz/pc/Logo_Meko_Quizz.png" alt="Logo_Quizz"/>
+            <img className="logo_quizz" src={logoMekoQuizz} alt="Logo_Quizz"/>
             <h1 className="title-style">Bienvenue Quizeur ! Es-tu prêt à tester ta culture générale ? </h1>
             <form >
             <label>
