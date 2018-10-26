@@ -58,7 +58,7 @@ class App extends Component {
       nbGoodAns: 0,   //Nombre de bonnes réponses au quiz
       buttonColor: "danger",
       nbQuestions: 0,//Nombre de questions total du quiz
-      bestPlayersTab : [] //Tableau de l'historique des joueurs et scores
+      bestPlayersTab : [{name : 'Maya', score : 200},{name : 'Chuck Norris', score : 1000000}] //Tableau de l'historique des joueurs et scores
     }
     this.clearDisable = this.clearDisable.bind(this);
     this.handleChange = this.handleChange.bind(this);
