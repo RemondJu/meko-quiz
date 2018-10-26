@@ -89,10 +89,10 @@ fillForm(event){
 onChange(event){
     if(event.target.name === 'status'){
         this.setState({
-            ['status-1']: false,
-            ['status-2']: false,
-            ['status-3']: false,
-            ['status-4']: false,
+            'status-1': false,
+            'status-2': false,
+            'status-3': false,
+            'status-4': false,
             [event.target.id]: true
         })
     }else {

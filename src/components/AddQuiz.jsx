@@ -57,7 +57,7 @@ class AddQuiz extends Component {
                 if (response.error) {
                     console.log(response.error);
                 } else {
-                    console.log(`Quizz ajouté avec l'ID ${response}`)
+                    alert(`Quizz ajouté avec l'ID ${response}`)
                 }
             })
             .then(this.setState({
@@ -73,6 +73,7 @@ class AddQuiz extends Component {
                 'answer-4': '',
                 'status-4': false,
             }))
+            .then(this.props.refreshFetch)
             .catch(event => {
                 console.log('event', event);
                 alert('ERREUR')
