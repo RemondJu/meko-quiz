@@ -84,7 +84,7 @@ class AddQuiz extends Component {
         return (
             <div className="AddQuiz">
                 <Container className="pb-2">
-                    <h1 className="adminTitle">Ajouter un nouveau quiz :</h1>
+                    <h1 className="adminTitle">Ajouter une nouvelle question :</h1>
                     <NavLink to="/admin" activeClassName="selected"><Button color="primary" size="lg" block>Accueil Administrateur</Button ></NavLink>
                     <Form className="mt-5" onSubmit={this.submitForm}>
                         <div className="AddForm mb-4">
@@ -178,7 +178,7 @@ class AddQuiz extends Component {
                                 </Row>
                             </FormGroup>
                         </div>
-                        <input type="submit" value="Ajouter" />
+                        <Button type="submit" color="success" size="lg" block>Ajouter</Button >
                     </Form>
                 </Container>
             </div>
