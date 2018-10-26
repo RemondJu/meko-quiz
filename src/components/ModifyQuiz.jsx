@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Table, Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import './AccueilAdmin.css';
 
 class ModifyQuiz extends Component {
     constructor(props) {
@@ -207,7 +208,7 @@ render() {
                     </Form>
                 </Container>
             </div>
-                <div className="scrolltab">
+                <div>
                     <Table hover>
                         <thead>
                         <tr>
@@ -215,25 +216,24 @@ render() {
                             <th>Nom du quiz</th>
                             <th>Question</th>
                             <th>Difficulté</th>
-                            <th>ID</th>
+                            <th></th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody className="scrolltab">
                         {this.props.quizList.map((quiz, index) => {
                             return (
                                 <tr key={quiz.id}>
-                                    <th scope="row">{index}</th>
+                                    <th scope="row">{index + 1}</th>
                                     <td>{quiz['name-quiz']}</td>
                                     <td>{quiz.question}</td>
                                     <td>{quiz['difficulty-quiz']}</td>
-                                    <td><Button id={quiz.id} onClick={this.fillForm}>{quiz.id} - Modifier</Button></td>
+                                    <td><Button id={quiz.id} onClick={this.fillForm}>Modifier</Button></td>
                                 </tr>
                             )
                         })}
                         </tbody>
                     </Table>
                 </div>
-                
             </Container>            
         </div>
      );

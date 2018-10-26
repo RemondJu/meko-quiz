@@ -179,7 +179,7 @@ class AddQuiz extends Component {
                                 </Row>
                             </FormGroup>
                         </div>
-                        <input type="submit" value="Ajouter" />
+                        <Button type="submit" color="success" size="lg" block>Ajouter</Button >
                     </Form>
                 </Container>
             </div>
