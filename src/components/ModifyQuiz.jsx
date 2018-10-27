@@ -102,6 +102,9 @@ onChange(event){
     }
 }
 
+componentDidUpdate(){
+    console.log('coucou', this.state)
+}
 
 render() { 
     return ( 
@@ -146,8 +149,9 @@ render() {
                                                     <Input type="radio"
                                                         name="status"
                                                         id="status-1"
-                                                        onClick={this.onChange}
-
+                                                        value={this.state['status-1']}
+                                                        checked={this.state['status-1']}
+                                                        onChange={this.onChange}
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
@@ -162,8 +166,9 @@ render() {
                                                     <Input type="radio"
                                                         name="status"
                                                         id="status-2"
-                                                        onClick={this.onChange}
-
+                                                        value={this.state['status-1']}
+                                                        checked={this.state['status-2']}
+                                                        onChange={this.onChange}
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
@@ -175,10 +180,13 @@ render() {
                                             <Input type="text" name="answer-3" id="answer" onChange={this.onChange} value={this.state['answer-3']} />
                                             <FormGroup check>
                                                 <Label check>
-                                                    <Input type="radio"
+                                                    <Input 
+                                                        type="radio"
                                                         name="status"
                                                         id="status-3"
-                                                        onClick={this.onChange}
+                                                        value={this.state['status-1']}
+                                                        checked={this.state['status-3']}
+                                                        onChange={this.onChange}
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
@@ -193,8 +201,9 @@ render() {
                                                     <Input type="radio"
                                                         name="status"
                                                         id="status-4"
-                                                        onClick={this.onChange}
-
+                                                        value={this.state['status-1']}
+                                                        checked={this.state['status-4']}
+                                                        onChange={this.onChange}
                                                     />{' '}Bonne reponse
                                                 </Label>
                                             </FormGroup>
@@ -204,7 +213,6 @@ render() {
                             </FormGroup>
                             <Button type="submit" >Valider</Button>
                         </div>
-                       
                     </Form>
                 </Container>
             </div>
@@ -239,6 +247,5 @@ render() {
      );
     }
 }
- 
  
 export default ModifyQuiz;
