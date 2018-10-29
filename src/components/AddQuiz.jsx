@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import './AdminForm.css'
+import ValidationModal from './ValidationModal';
 
 class AddQuiz extends Component {
     constructor(props) {
@@ -18,13 +19,22 @@ class AddQuiz extends Component {
             'status-3': false,
             'answer-4': '',
             'status-4': false,
+            modal: false,
+            answer: "Votre question a bien été ajoutée"
         }
         this.onChange = this.onChange.bind(this);
         this.submitForm = this.submitForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.toggle = this.toggle.bind(this);
     }
 
-    handleChange(event){
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
+    }
+
+    handleChange(event) {
         this.setState({
             'status-1': false,
             'status-2': false,
@@ -53,13 +63,7 @@ class AddQuiz extends Component {
         event.preventDefault();
         fetch(url, config)
             .then(res => res.json())
-            .then(response => {
-                if (response.error) {
-                    console.log(response.error);
-                } else {
-                    console.log(`Quizz ajouté avec l'ID ${response}`)
-                }
-            })
+            .then(this.toggle)
             .then(this.setState({
                 'name-quiz': '',
                 'difficulty-quiz': '',
@@ -179,6 +183,11 @@ class AddQuiz extends Component {
                             </FormGroup>
                         </div>
                         <Button type="submit" color="success" size="lg" block>Ajouter</Button >
+                        <ValidationModal
+                            modal={this.state.modal}
+                            toggle={this.toggle}
+                            answer={this.state.answer}
+                        />
                     </Form>
                 </Container>
             </div>
