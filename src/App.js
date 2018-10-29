@@ -27,7 +27,7 @@ class App extends Component {
       nbGoodAns: 0,   //Nombre de bonnes réponses au quiz
       buttonColor: "danger",
       nbQuestions: 0,//Nombre de questions total du quiz
-      bestPlayersTab : [] //Tableau de l'historique des joueurs et scores
+      bestPlayersTab : [{name : 'Maya', score : 200},{name : 'Chuck Norris', score : 1000000}] //Tableau de l'historique des joueurs et scores
     }
     this.clearDisable = this.clearDisable.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -146,6 +146,7 @@ class App extends Component {
 
                   <Route path={pathquiz} key={question.id} >
                     <Quiz
+                     questionNumber = {index + 1}
                       disabled={this.state.disabled}
                       disabledNext={this.state.disabledNext}
                       btnClick1={this.state.reponse1Click}
@@ -164,6 +165,7 @@ class App extends Component {
 
                   <Route path={pathquiz} key={question.id} >
                     <Quiz
+                        questionNumber = {index + 1}
                       disabled={this.state.disabled}
                       disabledNext={this.state.disabledNext}
                       btnClick1={this.state.reponse1Click}
@@ -214,7 +216,10 @@ class App extends Component {
                 refreshFetch={this.refreshFetch}/>
             </Route>
 
-            <Route path="/add"><AddQuiz /></Route>
+            <Route path="/add">
+            <AddQuiz
+             refreshFetch={this.refreshFetch} />
+            </Route>
 
             <Route path="/delete">
               <DeleteQuiz 

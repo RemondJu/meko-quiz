@@ -89,22 +89,21 @@ class ModifyQuiz extends Component {
 			})
 	}
 
-	onChange(event) {
-		if (event.target.name === 'status') {
-			this.setState({
-				['status-1']: false,
-				['status-2']: false,
-				['status-3']: false,
-				['status-4']: false,
-				[event.target.id]: true
-			})
-		} else {
-			this.setState({
-				[event.target.name]: event.target.value
-			})
-		}
-	}
-
+onChange(event){
+    if(event.target.name === 'status'){
+        this.setState({
+            'status-1': false,
+            'status-2': false,
+            'status-3': false,
+            'status-4': false,
+            [event.target.id]: true
+        })
+    }else {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+}
 
 	render() {
 		return (

@@ -77,6 +77,7 @@ class AddQuiz extends Component {
                 'answer-4': '',
                 'status-4': false,
             }))
+            .then(this.props.refreshFetch)
             .catch(event => {
                 console.log('event', event);
                 alert('ERREUR')

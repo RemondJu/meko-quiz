@@ -6,14 +6,16 @@
 .title-style{
   text-align: center;
   color: #EFF0F0;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  margin-bottom: 5px ;
+  line-height: 1.5em
 }
 
 .input-style{
   width: 60%;
   border-radius: 20px;
   padding: 10px 20px;
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
   border: solid rgb(148, 148, 148) 2px;
   background-color: rgb(223, 223, 223);
   outline: none;
@@ -50,13 +52,13 @@ nav.navbar.nav-home {
 
 @media (max-width:749px){
   body{
-    background-image: url("https://drive.google.com/uc?id=1Q8SW_bTTXJXK5sKImeddmN98T6jcpvr8");
+    background-image: url("../images/fondAppPc.png");
     background-repeat: no-repeat;
   }
 
   .logo_quizz{
     width: 250px;
-    margin:150px 0 150px 0;
+    margin: 30px 0 30px 0;
   }
 
   .button-style{
@@ -68,12 +70,12 @@ nav.navbar.nav-home {
 
 @media (min-width:750px){
   body{
-    background-image: url("https://drive.google.com/uc?id=1EeFUFqeE67AzgjMKWgjAep-Y6oGtzawF");
+    background-image: url("../images/fondAppPc.png");
     background-repeat: no-repeat;
   }
   .logo_quizz{
     width: 300px;
-    margin:100px 0 100px 0;
+    margin: 80px 0 60px 0;
   }
 
   .button-style{

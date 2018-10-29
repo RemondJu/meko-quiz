@@ -2,6 +2,10 @@ table.table.table-scores {
     background-color: transparent !important ;
     text-align: center;
     margin-top: 25px;
+    font-size: 20px
+}
+.table.table-scores td, .table.table-scores th {
+    vertical-align: middle
 }
 .bestPlayersTab {
     text-align: center;
@@ -12,9 +16,12 @@ table.table.table-scores {
 table.table-scores tbody tr {
     border-top : 1px solid lightgray ;
     border-bottom : 1px solid lightgray ;
-
 }
 
 table.table-scores thead {
     background-color: hsl(0, 0%, 91%);
+}
+
+.tabTrophy {
+    width :40px
 }

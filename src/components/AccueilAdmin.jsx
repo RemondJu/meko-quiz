@@ -35,7 +35,6 @@ class AccueilAdmin extends Component {
                 </Row>
                 <NavLink exact to="/" activeClassName="selected"><Button color="success" size="lg">Retour au jeu</Button ></NavLink>
             </Container>
-
         );
     }
 }
