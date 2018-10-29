@@ -102,10 +102,6 @@ onChange(event){
     }
 }
 
-componentDidUpdate(){
-    console.log('coucou', this.state)
-}
-
 render() { 
     return ( 
         <div className="ModifyQuiz">
