@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, Container, Table } from 'reactstrap';
 import './AdminForm.css'
+import ValidationModal from './ValidationModal.jsx'
 
 class DeleteQuiz extends Component {
   constructor(props) {
     super(props);
-    this.state = {  }
+    this.state = { 
+      modal: false,
+      answer : "Votre question a bien été supprimée"
+     }
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      modal: !this.state.modal
+    });
   }
 
   getDeleteQuizz(item) {
@@ -17,8 +29,8 @@ class DeleteQuiz extends Component {
     }
     fetch(url, config)
       .then(response => response.text())
-      .then(response => { response.error ? alert(response.error) : alert(`le quiz n°${item} à bien été supprimé`)})
       .then(this.props.refreshFetch)
+      .then(this.toggle)
   }
   
   render() {
@@ -38,10 +50,10 @@ class DeleteQuiz extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.data.map((quiz) => {
+              {this.props.data.map((quiz, index) => {
                 return (
                   <tr>
-                    <th scope="row">{quiz.id}</th>
+                    <th scope="row">{index + 1}</th>
                     <td>{quiz['name-quiz']}</td>
                     <td>{quiz['difficulty-quiz']}</td>
                     <td>{quiz.question}</td>
@@ -52,6 +64,11 @@ class DeleteQuiz extends Component {
             </tbody>
           </Table>
         </Container>
+        <ValidationModal 
+          modal={this.state.modal}
+          toggle={this.toggle}
+          answer={this.state.answer}
+        />
       </div>
     );
   }
