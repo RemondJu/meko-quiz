@@ -104,7 +104,7 @@ onChange(event){
         })
     }
 }
-
+  
 	render() {
 		return (
 			<div className="ModifyQuiz">
