@@ -198,7 +198,7 @@ onChange(event){
 																onClick={this.onChange}
 
 															/>{' '}Bonne reponse
-                                                </Label>
+                            </Label>
 													</FormGroup>
 												</FormGroup>
 											</Col>
