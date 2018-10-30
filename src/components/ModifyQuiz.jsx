@@ -216,7 +216,8 @@ onChange(event){
                                                                 value={this.state['status-4']}
                                                                 checked={this.state['status-4']}
 															/>{' '}Bonne reponse
-                                                        </Label>
+
+                            </Label>
 													</FormGroup>
 												</FormGroup>
 											</Col>

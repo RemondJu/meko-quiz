@@ -25,7 +25,7 @@ class Quiz extends Component {
                     </Row>   
                     <hr/>        
                     <Row className='mb-2'>
-                        <Col >
+                        <Col xs="12"  md="6">
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -36,7 +36,7 @@ class Quiz extends Component {
                             lettre='A :'
                             />
                         </Col> 
-                        <Col>
+                        <Col xs="12"  md="6">
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -47,9 +47,7 @@ class Quiz extends Component {
                             lettre='B :'
                             />
                         </Col>                     
-                    </Row>
-                    <Row>
-                        <Col>
+                        <Col xs="12"  md="6">
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -60,7 +58,7 @@ class Quiz extends Component {
                             lettre='C :'
                             />
                         </Col> 
-                        <Col>
+                        <Col xs="12"  md="6">
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
