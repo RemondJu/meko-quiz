@@ -22,7 +22,7 @@ class Reponse extends Component {
 
     render() { 
         return ( 
-            <Button block 
+            <Button block
             disabled={this.props.disabled}
             color={this.getAnswerBtnClass()}
             onClick={() => this.props.handleAns(this.props.status, this.props.reponseClick)}>{this.props.lettre} {this.props.reponse}</Button>
