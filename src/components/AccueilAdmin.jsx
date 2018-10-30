@@ -24,13 +24,13 @@ class AccueilAdmin extends Component {
                 </Row>
                 <Row className="mt-3 pb-5">
                     <Col>
-                        <NavLink to="/add" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Ajouter un question</Button ></NavLink>
+                        <NavLink to="/add" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Ajouter une question</Button ></NavLink>
                     </Col>
                     <Col>
-                        <NavLink to="/modify" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Modifier un question</Button ></NavLink>
+                        <NavLink to="/modify" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Modifier une question</Button ></NavLink>
                     </Col>
                     <Col>
-                        <NavLink to="/delete" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Supprimer un question</Button ></NavLink>
+                        <NavLink to="/delete" activeClassName="selected"><Button className="mb-2" color="primary" size="lg" block>Supprimer une question</Button ></NavLink>
                     </Col>
                 </Row>
                 <NavLink exact to="/" activeClassName="selected"><Button color="success" size="lg">Retour au jeu</Button ></NavLink>
