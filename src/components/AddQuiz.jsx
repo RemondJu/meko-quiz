@@ -52,12 +52,25 @@ class AddQuiz extends Component {
     }
 
     submitForm(event) {
+        const post = {
+            'name-quiz': this.state["name-quiz"],
+            'difficulty-quiz': this.state["difficulty-quiz"],
+            question: this.state.question,
+            'answer-1': this.state["answer-1"],
+            'status-1': this.state["status-1"],
+            'answer-2': this.state["answer-2"],
+            'status-2': this.state["status-2"],
+            'answer-3': this.state["answer-3"],
+            'status-3': this.state["status-3"],
+            'answer-4': this.state["answer-4"],
+            'status-4': this.state["status-4"],
+        }
         const config = {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(this.state),
+            body: JSON.stringify(post),
         };
 
         const url = "http://92.175.11.66:3000/teamburgers/api/questions";
