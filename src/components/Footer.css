@@ -1,0 +1,63 @@
+
+.background-footer{
+  padding: 10px 0;
+  background-color: #343a40;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  margin-top: 50px;
+  justify-content: space-between;
+  
+}
+
+.background-footer footer a{
+  margin: 10px;
+  color: white;
+}
+
+.burger{
+  padding-top : 5px;
+  color:white;
+  margin:0 10px;
+}
+
+
+.meko{
+  width: 253px;
+  padding-top : 5px;
+  color:white;
+  margin:0 10px;
+  text-align:left;
+
+}
+
+.logo{
+  width : 30px;
+}
+
+.logo-coeur{
+  width: 20px;
+}
+
+
+@media only screen and (max-width: 450px) {
+  .burger{
+    display: none;
+  }
+
+  .meko{
+    display: none;
+  }
+  .background-footer{
+    padding: 10px 0;
+    background-color: #343a40;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+    justify-content: center;
+    
+  }
+}

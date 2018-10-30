@@ -4,6 +4,7 @@ import { Table, Container, Col, Row, Button, Form, FormGroup, Label, Input } fro
 import './AccueilAdmin.css';
 import ValidationModal from './ValidationModal';
 
+
 class ModifyQuiz extends Component {
 	constructor(props) {
 		super(props);
@@ -34,7 +35,7 @@ class ModifyQuiz extends Component {
 			modal: !this.state.modal
 		});
 	}
-	
+
 	submitForm(event) {
 		const config = {
 			method: "PUT",
@@ -89,22 +90,22 @@ class ModifyQuiz extends Component {
 			})
 	}
 
-onChange(event){
-    if(event.target.name === 'status'){
-        this.setState({
-            'status-1': false,
-            'status-2': false,
-            'status-3': false,
-            'status-4': false,
-            [event.target.id]: true
-        })
-    }else {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-}
-  
+	onChange(event) {
+		if (event.target.name === 'status') {
+			this.setState({
+				'status-1': false,
+				'status-2': false,
+				'status-3': false,
+				'status-4': false,
+				[event.target.id]: true
+			})
+		} else {
+			this.setState({
+				[event.target.name]: event.target.value
+			})
+		}
+	}
+
 	render() {
 		return (
 			<div className="ModifyQuiz">

@@ -4,6 +4,7 @@ import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reac
 import './AdminForm.css'
 import ValidationModal from './ValidationModal';
 
+
 class AddQuiz extends Component {
     constructor(props) {
         super(props);
@@ -149,7 +150,7 @@ class AddQuiz extends Component {
                                             </FormGroup>
                                         </FormGroup>
                                     </Col>
-                                    <Col md={3}>
+                                    default <Col md={3}>
                                         <FormGroup>
                                             <Label >Réponse 3</Label>
                                             <Input type="text" name="answer-3" id="answer" onChange={this.onChange} value={this.state['answer-3']} />
@@ -192,7 +193,6 @@ class AddQuiz extends Component {
                     </Form>
                 </Container>
             </div>
-
         );
     }
 }
