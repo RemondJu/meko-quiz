@@ -49,7 +49,7 @@ class DeleteQuiz extends Component {
                 <th>Supprimer</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="scrolltab">
               {this.props.data.map((quiz, index) => {
                 return (
                   <tr>

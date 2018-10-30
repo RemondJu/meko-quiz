@@ -16,3 +16,7 @@
 .ModifyQuiz{
     margin-bottom: 100px;
 }
+.scrolltab{
+    overflow-y: scroll;
+    height: 300px;
+}
