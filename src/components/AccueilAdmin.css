@@ -1,6 +1,6 @@
-/* .AccueilAdmin{
-    margin-top: 20px;
-} */
+.AccueilAdmin{
+    margin-bottom: 10px;
+}
 
 .adminTitle{
     color: white;
@@ -16,7 +16,8 @@
 .ModifyQuiz{
     margin-bottom: 100px;
 }
-.scrolltab{
+.scrollTab{
+    height:350px ;
     overflow-y: scroll;
-    height: 300px;
+    overflow-x: hidden;
 }

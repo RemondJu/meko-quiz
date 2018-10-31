@@ -4,6 +4,7 @@ import { Table, Container, Col, Row, Button, Form, FormGroup, Label, Input } fro
 import './AccueilAdmin.css';
 import ValidationModal from './ValidationModal';
 
+
 class ModifyQuiz extends Component {
 	constructor(props) {
 		super(props);
@@ -34,7 +35,7 @@ class ModifyQuiz extends Component {
 			modal: !this.state.modal
 		});
 	}
-	
+
 	submitForm(event) {
         const post = {
             'name-quiz': this.state["name-quiz"],
@@ -102,22 +103,22 @@ class ModifyQuiz extends Component {
 			})
 	}
 
-onChange(event){
-    if(event.target.name === 'status'){
-        this.setState({
-            'status-1': false,
-            'status-2': false,
-            'status-3': false,
-            'status-4': false,
-            [event.target.id]: true
-        })
-    }else {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
-    }
-}
-  
+	onChange(event) {
+		if (event.target.name === 'status') {
+			this.setState({
+				'status-1': false,
+				'status-2': false,
+				'status-3': false,
+				'status-4': false,
+				[event.target.id]: true
+			})
+		} else {
+			this.setState({
+				[event.target.name]: event.target.value
+			})
+		}
+	}
+
 	render() {
 		return (
 			<div className="ModifyQuiz">
@@ -161,10 +162,11 @@ onChange(event){
 															<Input type="radio"
 																name="status"
 																id="status-1"
-																onClick={this.onChange}
-
+                                                                onClick={this.onChange}
+                                                                value={this.state['status-1']}
+                                                                checked={this.state['status-1']}
 															/>{' '}Bonne reponse
-                                                </Label>
+                                                        </Label>
 													</FormGroup>
 												</FormGroup>
 											</Col>
@@ -177,10 +179,11 @@ onChange(event){
 															<Input type="radio"
 																name="status"
 																id="status-2"
-																onClick={this.onChange}
-
+                                                                onClick={this.onChange}
+                                                                value={this.state['status-2']}
+                                                                checked={this.state['status-2']}
 															/>{' '}Bonne reponse
-                                                </Label>
+                                                        </Label>
 													</FormGroup>
 												</FormGroup>
 											</Col>
@@ -193,9 +196,11 @@ onChange(event){
 															<Input type="radio"
 																name="status"
 																id="status-3"
-																onClick={this.onChange}
+                                                                onClick={this.onChange}
+                                                                value={this.state['status-3']}
+                                                                checked={this.state['status-3']}
 															/>{' '}Bonne reponse
-                                                </Label>
+                                                        </Label>
 													</FormGroup>
 												</FormGroup>
 											</Col>
@@ -208,9 +213,11 @@ onChange(event){
 															<Input type="radio"
 																name="status"
 																id="status-4"
-																onClick={this.onChange}
-
+                                                                onClick={this.onChange}
+                                                                value={this.state['status-4']}
+                                                                checked={this.state['status-4']}
 															/>{' '}Bonne reponse
+
                             </Label>
 													</FormGroup>
 												</FormGroup>
@@ -227,29 +234,29 @@ onChange(event){
 							</Form>
 						</Container>
 					</div>
-					<div>
-						<Table hover>
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Nom du quiz</th>
-									<th>Question</th>
-									<th>Difficulté</th>
-									<th></th>
-								</tr>
-							</thead>
-							<tbody className="scrolltab">
+                    <Table className="mb-0">
+                        <thead>
+                            <tr className="row m-0">
+                                <th className="col-1">#</th>
+                                <th className="col-1">Nom du quiz</th>
+                                <th className="col-8">Question</th>
+                                <th className="col-2"></th>
+                            </tr>
+                        </thead>
+                    </Table>
+					<div className="scrollTab">                        
+						<Table className="mb-0">
+							<tbody>     
 								{this.props.quizList.map((quiz, index) => {
 									return (
-										<tr key={quiz.id}>
-											<th scope="row">{index + 1}</th>
-											<td>{quiz['name-quiz']}</td>
-											<td>{quiz.question}</td>
-											<td>{quiz['difficulty-quiz']}</td>
-											<td><Button id={quiz.id} onClick={this.fillForm}>Modifier</Button></td>
+										<tr className="row" key={quiz.id}>
+											<th  className="col-1" scope="row">{index + 1}</th>
+											<td className="col-1">{quiz['name-quiz']}</td>
+											<td className="col-7">{quiz.question}</td>
+											<td className="col-3"><Button id={quiz.id} onClick={this.fillForm}>Modifier</Button></td>
 										</tr>
 									)
-								})}
+                                })}                               
 							</tbody>
 						</Table>
 					</div>

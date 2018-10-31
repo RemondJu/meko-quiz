@@ -8,6 +8,7 @@ import './Resultat.css';
 import BestPlayers from './BestPlayers';
 import banniereScore from "../images/banniereScore.png";
 import trophee from "../images/trophee.png";
+import Footer from './Footer.jsx'
 
 class Resultat extends Component {
     constructor(props) {
@@ -79,6 +80,7 @@ class Resultat extends Component {
                         <BestPlayers bestPlayersTab={this.props.bestPlayersTab} />
                     </ModalBody>
                 </Modal>
+                <Footer />
             </div>
         )
     }

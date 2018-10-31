@@ -5,6 +5,7 @@ import BestPlayers from './BestPlayers';
 import logoMekoQuizz from "../images/logoMekoQuizz.png"
 import './NameForm.css';
 import './Resultat.css';
+import Footer from './Footer.jsx';
 
 class NameForm extends Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class NameForm extends Component {
                     <BestPlayers bestPlayersTab = {this.props.bestPlayersTab} />
                 </ModalBody>
             </Modal>
+            <Footer />
         </div>
       </div>
     );
