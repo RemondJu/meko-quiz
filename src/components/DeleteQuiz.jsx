@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Button, Container, Table } from 'reactstrap';
 import './AdminForm.css'
-import ValidationModal from './ValidationModal.jsx'
+import ValidationModal from './ValidationModal.jsx';
+
 
 class DeleteQuiz extends Component {
   constructor(props) {

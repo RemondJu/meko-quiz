@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import { Container, Row, Col , Button } from 'reactstrap';
 import PlayerUI from './PlayerUI.jsx';
 import Reponse from './Reponse';
+import Footer from './Footer.jsx'
 
 class Quiz extends Component {
     state = {  }
@@ -77,6 +78,7 @@ class Quiz extends Component {
                         onClick={this.props.clearDisable}color='secondary'>Next</Button>{' '}
                     </NavLink>
                 </Col>
+                <Footer />
             </div>              
         )
     }
