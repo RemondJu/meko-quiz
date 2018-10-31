@@ -7,7 +7,7 @@ const Question = (props) => {
         <div className="Question">
             <h2>{props.quizOne["name-quiz"]}</h2>
             <h3 className ="numeroQuestion">Question {props.questionNumber}</h3>
-            <h5 className="question">{props.quizOne.question}</h5>
+            <h4 className="question">{props.quizOne.question}</h4>
         </div>
     );
 }

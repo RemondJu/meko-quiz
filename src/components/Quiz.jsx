@@ -17,7 +17,7 @@ class Quiz extends Component {
                 points={this.props.points} />
                  <Container className='questionContainer p-3'>
                     <Row>
-                        <Col className='text-center pb-5'>
+                        <Col className='text-center pb-3'>
                             <Question 
                             quizOne={this.props.q}
                             questionNumber = {this.props.questionNumber}
@@ -26,7 +26,7 @@ class Quiz extends Component {
                     </Row>   
                     <hr/>        
                     <Row className='mb-2'>
-                        <Col xs="12"  md="6">
+                        <Col xs="12"  md="6" className= 'mb-1' >
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -37,7 +37,7 @@ class Quiz extends Component {
                             lettre='A :'
                             />
                         </Col> 
-                        <Col xs="12"  md="6">
+                        <Col xs="12"  md="6" className= 'mb-1'>
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -48,7 +48,7 @@ class Quiz extends Component {
                             lettre='B :'
                             />
                         </Col>                     
-                        <Col xs="12"  md="6">
+                        <Col xs="12"  md="6" className= 'mb-1'>
                             <Reponse
                             disabled={this.props.disabled}
                             handleAns={this.props.handleAns}
@@ -72,10 +72,10 @@ class Quiz extends Component {
                         </Col>                    
                     </Row>                    
                 </Container> 
-                <Col className='mt-4'>
+                
                     <NavLink to={this.props.pathquiz} activeClassName='selected'>
-                        <Button disabled={this.props.disabledNext} 
-                        onClick={this.props.clearDisable}color='secondary'>Next</Button>{' '}
+                        <Button className = 'btn-next' disabled={this.props.disabledNext} 
+                        onClick={this.props.clearDisable}color='secondary'>Suivant</Button>{' '}
                     </NavLink>
                 </Col>
                 <Footer />
