@@ -77,7 +77,6 @@ class Quiz extends Component {
                         <Button className = 'btn-next' disabled={this.props.disabledNext} 
                         onClick={this.props.clearDisable}color='secondary'>Suivant</Button>{' '}
                     </NavLink>
-                </Col>
                 <Footer />
             </div>              
         )

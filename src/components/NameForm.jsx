@@ -41,9 +41,9 @@ class NameForm extends Component {
                 <input className="input-style" type="text" placeholder='Saisis ton nom de joueur' value={this.props.value} onChange={this.props.onChange} />
             </label>
             <div>
-            <NavLink to="/quiz0" activeClassName="selected">
-                <Button color={this.props.buttonColor} size="lg" type="submit" disabled={this.props.disabledPlay} >Jouez !</Button>
-              </NavLink>
+                <NavLink to="/quiz0" activeClassName="selected">
+                    <Button color={this.props.buttonColor} size="lg" type="submit" disabled={this.props.disabledPlay} >Jouez !</Button>
+                </NavLink>
             </div>
             </form>
             <Modal isOpen={this.state.modal} toggle={this.toggle} className = "modal-BestPlayers">
