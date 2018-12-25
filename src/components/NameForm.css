@@ -1,0 +1,85 @@
+.form-style{
+  width: 100%;
+  margin-top: 2em;
+}
+
+.title-style{
+  text-align: center;
+  color: #EFF0F0;
+  font-size: 1.3em;
+  margin-bottom: 5px ;
+  line-height: 1.5em
+}
+
+.input-style{
+  width: 60%;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 40px 0 20px 0;
+  border: solid rgb(148, 148, 148) 2px;
+  background-color: rgb(223, 223, 223);
+  outline: none;
+}
+
+.button-style{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+
+.button-style:active{
+  outline: none;
+}
+
+Button.meilleursScores{
+  color: white;
+}
+
+label{
+  width: 90%
+}
+
+nav.navbar.nav-home {
+    display: block;
+    justify-content: center
+}
+
+.modal-BestPlayers .modal-content {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+@media (max-width:749px){
+  body{
+    background-image: url("../images/fondAppPc.png");
+    background-repeat: no-repeat;
+  }
+
+  .logo_quizz{
+    width: 250px;
+    margin: 30px 0 30px 0;
+  }
+
+  .button-style{
+    width: 150px;
+    margin: 150px 0 0 0;
+  }
+
+}
+
+@media (min-width:750px){
+  body{
+    background-image: url("../images/fondAppPc.png");
+    background-repeat: no-repeat;
+  }
+  .logo_quizz{
+    width: 300px;
+    margin: 80px 0 60px 0;
+  }
+
+  .button-style{
+    width: 150px;
+    margin: 50px 0 0 0;
+  }
+}

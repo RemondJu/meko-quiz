@@ -1,0 +1,133 @@
+/* ///////////////////////////////////////////// */
+/*                    Fonts                      */
+/* ///////////////////////////////////////////// */
+
+@font-face {
+    font-family: 'Russo One';
+    src: url('Fonts/RussoOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ///////////////////////////////////////////// */
+/*                      HTML                     */
+/* ///////////////////////////////////////////// */
+
+body{
+    background: linear-gradient(rgb(0, 51, 94),rgb(73, 124, 184));
+    background-repeat: no-repeat;
+   
+}
+.Resultat{
+    overflow: hidden;
+}
+
+/* ///////////////////////////////////////////// */
+/*               Tous les textes                 */
+/* ///////////////////////////////////////////// */
+
+*{
+    font-family: 'Russo One';
+}
+
+/* ///////////////////////////////////////////// */
+/*                    Resultat                   */
+/* ///////////////////////////////////////////// */
+
+.banniere{
+    margin-top: 5vw;
+}
+
+.fond{
+    max-height: 470px;
+}
+
+.scoreEquipe{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-size: 1em; 
+    top: -415px;
+    max-width:280px ;
+    margin: auto;
+}
+
+.trophee{
+    max-width: 5em;
+}
+/* ///////////////////////////////////////////// */
+/*                     SCORE                     */
+/* ///////////////////////////////////////////// */
+
+.Score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 0 0;
+}
+
+.Score > p{
+    font-weight: normal;
+    font-size: 1;
+}
+
+/* ///////////////////////////////////////////// */
+/*                    Points                     */
+/* ///////////////////////////////////////////// */
+
+.Points > p{
+    font-size: 2em;
+    margin-top: -20px;
+}
+/* ///////////////////////////////////////////// */
+/*                    Equipe                     */
+/* ///////////////////////////////////////////// */
+
+.Equipe > p{
+    font-size: 1em;
+    margin-top: -20px;
+    margin-bottom: 40px;
+}
+
+/* ///////////////////////////////////////////// */
+/*                 Felicitation                  */
+/* ///////////////////////////////////////////// */
+
+.Felicitation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.Felicitation > p{
+    font-size: 2.6em;
+}
+
+/* ///////////////////////////////////////////// */
+/*                BonnesReponses                 */
+/* ///////////////////////////////////////////// */
+
+.BonnesReponses{
+    font-size: 0.7em;
+    margin-top: -30px;    
+}
+
+/* ///////////////////////////////////////////// */
+/*                Modal Best scores              */
+/* ///////////////////////////////////////////// */
+
+.modal-BestPlayers .modal-content {
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+.btnAcc_and_Res > .btnResult{
+    background-color:rgb(87, 130, 168); 
+}
+
+button.btnResult {
+    background-color: rgb(226, 168, 43);
+    color: white;
+    margin-top: 30px;
+}
+

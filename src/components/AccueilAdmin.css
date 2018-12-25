@@ -1,0 +1,23 @@
+.AccueilAdmin{
+    margin-bottom: 10px;
+}
+
+.adminTitle{
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+
+.adminChapo{
+    color: white;
+}
+
+.ModifyQuiz{
+    margin-bottom: 100px;
+}
+.scrollTab{
+    height:350px ;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
